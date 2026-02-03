@@ -1,0 +1,611 @@
+{
+  "metadata": {
+    "title": "SmartSpend - Suivi des Dépenses Hors Ligne & 100% Privé",
+    "description": "L'outil de budget Local-First ultime pour iOS et Android. Votre argent, vos règles. Hors ligne et 100% Privé."
+  },
+  "navigation": {
+    "home": "Accueil",
+    "features": "Fonctionnalités",
+    "privacy": "Confidentialité",
+    "download": "Télécharger",
+    "budget": "Budget",
+    "stats": "Statistiques",
+    "settings": "Paramètres"
+  },
+  "header": {
+    "download": "Télécharger",
+    "menu": {
+      "open": "Ouvrir le menu",
+      "close": "Fermer le menu"
+    }
+  },
+  "hero": {
+    "badge": "Disponible pour iOS et Android",
+    "title": "Votre argent, vos règles.",
+    "titleHighlight": "Hors ligne et 100% Privé.",
+    "description": "L'outil de budget Local-First ultime pour iOS et Android. Contrôlez vos dépenses sans dépendre du cloud.",
+    "downloadAppStore": "Télécharger sur App Store",
+    "downloadPlayStore": "Télécharger sur Google Play",
+    "stats": {
+      "users": "Utilisateurs actifs",
+      "rating": "Note moyenne",
+      "dataSold": "Données vendues"
+    },
+    "notifications": {
+      "incomeRegistered": "Revenu enregistré",
+      "budgetAlert": "Alerte budgétaire",
+      "85percentUsed": "85% utilisé",
+      "reminder": "Rappel",
+      "subscriptionDue": "Abonnement échu"
+    }
+  },
+  "features": {
+    "title": "Tout ce dont vous avez besoin pour",
+    "titleHighlight": "contrôler vos finances",
+    "subtitle": "Trois piliers fondamentaux pour une gestion financière intelligente et sans tracas.",
+    "budget": {
+      "title": "Intelligence Budgétaire",
+      "description": "Planifiez avec des limites de dépenses réelles et des objectifs d'épargne."
+    },
+    "stats": {
+      "title": "Analyse Profonde",
+      "description": "Comparaison équitable jour après jour. Comprenez vos habitudes."
+    },
+    "subscriptions": {
+      "title": "Automatisation",
+      "description": "Abonnements et paiements récurrents sous contrôle."
+    }
+  },
+  "privacy": {
+    "badge": "Local-First",
+    "title": "Votre confidentialité est notre",
+    "titleHighlight": "priorité absolue",
+    "subtitle": "Contrairement aux autres applications financières, SmartSpend ne vend jamais vos données et ne nécessite pas de connexion internet.",
+    "features": {
+      "offline": {
+        "title": "100% Hors Ligne",
+        "description": "Vos données ne quittent jamais votre appareil. Fonctionne complètement sans connexion internet."
+      },
+      "encryption": {
+        "title": "Chiffrement Local",
+        "description": "Toutes les informations sont stockées en toute sécurité sur votre appareil avec un chiffrement avancé."
+      },
+      "biometric": {
+        "title": "Biométrie Intégrée",
+        "description": "Protégez votre application avec Face ID ou empreinte digitale. Vous seul pouvez accéder à vos finances."
+      },
+      "noTracking": {
+        "title": "Pas de Traqueurs",
+        "description": "Nous ne collectons pas de données d'utilisation ni ne partageons d'informations avec des tiers. Votre confidentialité d'abord."
+      },
+      "backup": {
+        "title": "Sauvegarde Locale",
+        "description": "Exportez vos données au format JSON ou CSV. Gardez le contrôle total de vos informations."
+      },
+      "gdpr": {
+        "title": "Conforme RGPD",
+        "description": "Conçu selon les normes les plus strictes de protection des données personnelles."
+      }
+    },
+    "certification": {
+      "title": "Certification de Confidentialité",
+      "subtitle": "Vérifié par des experts en cybersécurité",
+      "breaches": "Violations de sécurité",
+      "localData": "Données locales",
+      "thirdPartyAccess": "Tiers avec accès"
+    }
+  },
+  "footer": {
+    "description": "L'outil de budget Local-First ultime. Votre argent, vos règles, 100% privé.",
+    "links": {
+      "product": "Produit",
+      "resources": "Ressources",
+      "legal": "Légal"
+    },
+    "product": {
+      "features": "Fonctionnalités",
+      "download": "Télécharger",
+      "changelog": "Changelog",
+      "roadmap": "Roadmap"
+    },
+    "resources": {
+      "budgetGuide": "Guide Budget",
+      "blog": "Blog",
+      "tutorials": "Tutoriels",
+      "faq": "FAQ"
+    },
+    "legal": {
+      "privacy": "Confidentialité",
+      "terms": "Conditions",
+      "support": "Support",
+      "contact": "Contact"
+    },
+    "features": "Fonctionnalités clés:",
+    "featureTags": {
+      "multiCurrency": "Multi-devises",
+      "csvExport": "Export CSV",
+      "autoDarkMode": "Mode Sombre Auto",
+      "optionalSync": "Sync Optionnelle",
+      "smartBudgets": "Budgets Intelligents",
+      "advancedStats": "Statistiques Avancées",
+      "scheduledTransactions": "Transactions Programmées",
+      "customCategories": "Catégories Personnalisées"
+    },
+    "copyright": "Tous droits réservés.",
+    "madeWith": "Fait avec passion pour la communauté financière"
+  },
+  "app": {
+    "screens": {
+      "home": {
+        "month": "JAN. 2026",
+        "balance": "Solde Disponible",
+        "income": "REVENUS",
+        "expenses": "DÉPENSES",
+        "daysLeft": "5 JOURS RESTANTS CE MOIS",
+        "dailyBudget": "Vous pouvez dépenser 23 000 $ / jour",
+        "viewHistory": "Voir l'historique complet",
+        "today": "Aujourd'hui",
+        "yesterday": "Hier",
+        "transactions": {
+          "meat": "Achat de viande",
+          "market": "Marché",
+          "dinner": "Dîner du soir",
+          "restaurants": "Restaurants",
+          "savings": "Épargne moto",
+          "savingsCategory": "Épargne"
+        }
+      },
+      "budget": {
+        "month": "JAN. 2026",
+        "budgeted": "Budgété",
+        "spent": "Dépensé",
+        "remaining": "Restant",
+        "activeBudgets": "Budgets actifs",
+        "restaurants": "Restaurants",
+        "savings": "Épargne",
+        "left": "Reste"
+      },
+      "stats": {
+        "month": "JAN. 2026",
+        "quickView": "Vue Rapide",
+        "customize": "Personnaliser",
+        "avgDailySpend": "Dépense Journalière Moyenne",
+        "topCategory": "Catégorie Principale",
+        "topDay": "Jour où vous dépensez le plus",
+        "vsLastMonth": "vs Mois Dernier",
+        "expensesByCategory": "Dépenses par Catégorie",
+        "spent": "dépensé",
+        "categories": {
+          "bills": "Factures",
+          "restaurants": "Restaurants"
+        },
+        "saturday": "Samedi"
+      },
+      "subscriptions": {
+        "title": "Programmées",
+        "category": "Abonnements",
+        "status": {
+          "active": "Active"
+        },
+        "next": "Prochaine",
+        "deactivate": "Désactiver",
+        "items": {
+          "netflix": "Netflix",
+          "disney": "Disney plus",
+          "apple": "Apple",
+          "rappi": "Rappi prime"
+        },
+        "frequency": {
+          "monthly17": "Mensuel le jour 17",
+          "monthly14": "Mensuel le jour 14"
+        },
+        "nextDate": "17 févr. 2026",
+        "nextDate14": "14 févr. 2026"
+      }
+    },
+    "common": {
+      "add": "Ajouter",
+      "cancel": "Annuler",
+      "save": "Enregistrer",
+      "delete": "Supprimer",
+      "edit": "Modifier",
+      "close": "Fermer",
+      "loading": "Chargement...",
+      "error": "Erreur",
+      "success": "Succès",
+      "currency": "$"
+    }
+  },
+  "localeSwitcher": {
+    "label": "Langue",
+    "switch": "Changer de langue"
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "Nous sommes là pour vous aider. Remplissez le formulaire et nous vous répondrons dès que possible.",
+    "formTitle": "Envoyez-nous un message",
+    "info": {
+      "email": {
+        "title": "E-mail",
+        "description": "Pour demandes générales et support"
+      },
+      "hours": {
+        "title": "Heures d'ouverture",
+        "schedule": "Lundi à Vendredi\n9h00 - 18h00 (COT)"
+      },
+      "location": {
+        "title": "Emplacement",
+        "address": "Bogotá, Colombie\nNous travaillons à distance"
+      }
+    },
+    "fields": {
+      "name": {
+        "label": "Nom complet",
+        "placeholder": "Votre nom"
+      },
+      "email": {
+        "label": "E-mail",
+        "placeholder": "votre@email.com"
+      },
+      "subject": {
+        "label": "Sujet",
+        "placeholder": "Sélectionnez un sujet"
+      },
+      "message": {
+        "label": "Message",
+        "placeholder": "Écrivez votre message ici..."
+      },
+      "newsletter": {
+        "label": "Je souhaite recevoir des nouvelles et des mises à jour par e-mail"
+      }
+    },
+    "subjects": {
+      "general": "Demande générale",
+      "support": "Support technique",
+      "sales": "Ventes",
+      "bug": "Signalement de bug",
+      "other": "Autre"
+    },
+    "errors": {
+      "name.min": "Le nom doit contenir au moins 2 caractères",
+      "name.max": "Le nom ne peut pas dépasser 100 caractères",
+      "email.invalid": "Veuillez entrer un e-mail valide",
+      "subject.required": "Veuillez sélectionner un sujet",
+      "message.min": "Le message doit contenir au moins 20 caractères",
+      "message.max": "Le message ne peut pas dépasser 5000 caractères",
+      "rate_limit_exceeded": "Vous avez envoyé trop de messages. Réessayez dans 15 minutes.",
+      "missing_fields": "Veuillez remplir tous les champs obligatoires",
+      "invalid_email": "E-mail invalide",
+      "invalid_message_length": "Le message doit contenir entre 20 et 5000 caractères",
+      "email_send_failed": "Erreur lors de l'envoi du message. Veuillez réessayer.",
+      "internal_error": "Erreur interne du serveur",
+      "network": "Erreur de connexion. Vérifiez votre internet.",
+      "default": "Une erreur s'est produite. Veuillez réessayer."
+    },
+    "submit": {
+      "button": "Envoyer le message",
+      "loading": "Envoi en cours..."
+    },
+    "success": {
+      "title": "Message envoyé !",
+      "message": "Merci de nous avoir contactés. Nous vous répondrons dès que possible.",
+      "button": "Envoyer un autre message"
+    }
+  },
+  "navigation": {
+    "home": "Accueil",
+    "features": "Fonctionnalités",
+    "privacy": "Confidentialité",
+    "download": "Télécharger",
+    "contact": "Contact"
+  },
+  "privacyPolicy": {
+    "metadata": {
+      "title": "Politique de Confidentialité - SmartSpend",
+      "description": "Découvrez comment SmartSpend protège votre vie privée. Notre politique de confidentialité complète détaille la collecte, l'utilisation, le stockage des données et vos droits en vertu du RGPD, du CCPA et d'autres réglementations sur la confidentialité."
+    },
+    "header": {
+      "badge": "Document Légal",
+      "title": "Politique de Confidentialité",
+      "subtitle": "Votre vie privée est notre priorité absolue. Cette politique explique comment nous collectons, utilisons, protégeons et gérons vos informations lorsque vous utilisez SmartSpend.",
+      "lastUpdated": "Dernière Mise à Jour",
+      "effectiveDate": "Date d'Entrée en Vigueur"
+    },
+    "intro": "Cette Politique de Confidentialité décrit Nos politiques et procédures concernant la collecte, l'utilisation et la divulgation de Vos informations lorsque Vous utilisez l'application mobile SmartSpend et Vous informe de vos droits à la vie privée et de la manière dont la loi Vous protège. Nous utilisons Vos données personnelles pour fournir et améliorer le Service. En utilisant le Service, Vous acceptez la collecte et l'utilisation des informations conformément à cette Politique de Confidentialité.",
+    "toc": {
+      "title": "Contenu"
+    },
+    "sections": {
+      "companyInfo": {
+        "title": "1. Informations sur l'Entreprise et l'Application",
+        "appName": "Nom de l'Application",
+        "developer": "Développeur",
+        "platform": "Disponibilité des Plateformes",
+        "category": "Catégorie de l'App",
+        "description": "SmartSpend est une application de budget et de suivi des dépenses local-first conçue avec la confidentialité au cœur. Notre mission est de fournir des outils puissants de gestion financière sans compromettre vos données personnelles."
+      },
+      "dataCollection": {
+        "title": "2. Informations que Nous Collectons",
+        "personalInfo": {
+          "title": "Informations Personnelles (Optionnel)",
+          "items": [
+            "Nom ou surnom (si vous choisissez d'en définir un)",
+            "Préférences de profil (devise, langue, thème)",
+            "Préférences d'authentification biométrique (Face ID, Empreinte digitale)"
+          ],
+          "note": "Note : Toutes les informations personnelles sont stockées localement sur votre appareil et ne sont jamais transmises à nos serveurs."
+        },
+        "financialData": {
+          "title": "Données Financières (Local Uniquement)",
+          "items": [
+            "Enregistrements de transactions (montants, dates, catégories, notes)",
+            "Configurations de budget et limites de dépenses",
+            "Paramètres de transactions programmées/récurrentes",
+            "Personnalisations de catégories et icônes"
+          ],
+          "note": "Important : Vos données financières ne quittent jamais votre appareil sauf si vous les exportez explicitement ou activez la sauvegarde cloud optionnelle."
+        },
+        "deviceInfo": {
+          "title": "Informations sur l'Appareil (Minimal)",
+          "items": [
+            "Type d'appareil et version du système d'exploitation (pour la compatibilité)",
+            "Version de l'app et paramètres",
+            "Préférences de taille/orientation d'écran"
+          ]
+        },
+        "locationData": {
+          "title": "Données de Localisation",
+          "content": "SmartSpend ne collecte, ne stocke ni ne transmet vos données de localisation. Toutes les fonctionnalités liées à la localisation (s'il y en a) sont traitées localement sur votre appareil."
+        },
+        "analytics": {
+          "title": "Analyses d'Utilisation",
+          "content": "Nous collectons des statistiques d'utilisation minimales et anonymisées uniquement si vous optez explicitement. Ces données nous aident à améliorer l'app et incluent :",
+          "items": [
+            "Fréquence d'utilisation des fonctionnalités (anonymisé)",
+            "Rapports de plantage et journaux d'erreurs",
+            "Métriques de performance de l'app"
+          ],
+          "note": "Vous pouvez désactiver les analyses à tout moment dans Paramètres → Confidentialité → Analyses."
+        }
+      },
+      "dataUsage": {
+        "title": "3. Comment Nous Utilisons Vos Données",
+        "intro": "Nous utilisons les données collectées aux fins suivantes :",
+        "coreFunctionality": {
+          "title": "Fonctionnalité Principale",
+          "items": [
+            "Affichage de votre tableau de bord financier",
+            "Calcul des budgets et analyses de dépenses",
+            "Génération de rapports et statistiques",
+            "Envoi de notifications locales pour les rappels"
+          ]
+        },
+        "improvement": {
+          "title": "Amélioration de l'App",
+          "items": [
+            "Correction de bugs et plantages",
+            "Optimisation des performances",
+            "Compréhension de l'utilisation des fonctionnalités (anonymisé)",
+            "Planification de nouvelles fonctionnalités"
+          ]
+        },
+        "security": {
+          "title": "Sécurité",
+          "items": [
+            "Protection contre les accès non autorisés",
+            "Vérification de l'authentification biométrique",
+            "Détection d'activités suspectes"
+          ]
+        },
+        "support": {
+          "title": "Support Utilisateur",
+          "items": [
+            "Réponse à vos demandes",
+            "Fourniture d'assistance technique",
+            "Traitement des commentaires"
+          ]
+        },
+        "weDoNot": "Nous ne : Vendons pas vos données, ne les utilisons pas pour le profilage publicitaire, ne les partageons pas avec des courtiers de données, ni ne les utilisons à d'autres fins que de fournir et d'améliorer SmartSpend."
+      },
+      "thirdParties": {
+        "title": "4. Services Tiers et Intégrations",
+        "intro": "SmartSpend est conçu pour fonctionner hors ligne avec des dépendances tierces minimales. Cependant, certaines fonctionnalités optionnelles peuvent impliquer des services tiers :",
+        "analytics": {
+          "title": "Fournisseurs d'Analyses (Optionnel)",
+          "provider": "Firebase Analytics / Crashlytics (Google)",
+          "description": "Utilisé uniquement si vous optez pour les analyses. Collecte des données d'utilisation anonymisées et rapports de plantage.",
+          "link": "Voir la Politique de Confidentialité de Google"
+        },
+        "payments": {
+          "title": "Processeurs de Paiement",
+          "content": "SmartSpend ne traite pas les paiements directement. Si vous effectuez des achats intégrés, les transactions sont entièrement gérées par l'Apple App Store ou le Google Play Store. Nous ne recevons ni ne stockons vos informations de paiement."
+        },
+        "cloudBackup": {
+          "title": "Services de Sauvegarde Cloud (Optionnel)",
+          "content": "Si vous activez la sauvegarde cloud optionnelle, vos données chiffrées peuvent être stockées en utilisant :",
+          "items": [
+            "iCloud : Service de stockage cloud d'Apple (pour utilisateurs iOS)",
+            "Google Drive : Service de stockage cloud de Google (pour utilisateurs Android)"
+          ],
+          "note": "Vos données sont chiffrées avant d'être téléchargées vers ces services."
+        },
+        "platformServices": {
+          "title": "Services de Plateforme de l'Appareil",
+          "content": "L'app utilise des services standard de l'appareil pour :",
+          "items": [
+            "Authentification biométrique (Face ID, Touch ID, Empreinte digitale)",
+            "Notifications locales et rappels",
+            "Fonctionnalité d'export/import de fichiers"
+          ]
+        }
+      },
+      "userRights": {
+        "title": "5. Vos Droits et Mécanismes de Contrôle",
+        "intro": "Selon votre emplacement, vous pouvez avoir les droits suivants concernant vos données personnelles :",
+        "access": {
+          "title": "Droit d'Accès",
+          "content": "Vous pouvez consulter toutes vos données à tout moment dans l'app. Exportez vos données au format JSON ou CSV depuis les Paramètres."
+        },
+        "correction": {
+          "title": "Droit de Rectification",
+          "content": "Modifiez ou mettez à jour toute transaction, budget ou information de profil directement dans l'app."
+        },
+        "deletion": {
+          "title": "Droit à l'Effacement",
+          "content": "Supprimez des enregistrements individuels ou toutes les données de l'app. La désinstallation de l'app supprime toutes les données locales."
+        },
+        "portability": {
+          "title": "Droit à la Portabilité",
+          "content": "Exportez vos données dans des formats standard (JSON, CSV) pour les transférer vers d'autres services."
+        },
+        "howToExercise": {
+          "title": "Comment Exercer Vos Droits",
+          "items": [
+            "Accès/Export : Paramètres → Données → Exporter les Données",
+            "Rectification : Modifiez toute transaction ou budget directement dans l'app",
+            "Effacement : Paramètres → Données → Supprimer Toutes les Données, ou désinstallez l'app",
+            "Opt-out des Analyses : Paramètres → Confidentialité → Analyses → Désactiver",
+            "Contactez-nous : Utilisez les informations de contact au bas de cette politique"
+          ]
+        },
+        "regionalRights": "Droits Régionaux : Les résidents de l'UE (RGPD), de Californie (CCPA), du Brésil (LGPD) et d'autres juridictions ont des droits supplémentaires. Contactez-nous pour des demandes spécifiques à votre juridiction."
+      },
+      "retention": {
+        "title": "6. Politiques de Conservation et de Suppression des Données",
+        "retentionPeriods": {
+          "title": "Périodes de Conservation",
+          "financialData": {
+            "title": "Données Financières",
+            "content": "Stockées localement sur votre appareil jusqu'à ce que vous les supprimiez ou désinstalliez l'app. Nous ne conservons pas de copies sur nos serveurs."
+          },
+          "analyticsData": {
+            "title": "Données d'Analyse",
+            "content": "Les données d'analyse anonymisées sont conservées jusqu'à 26 mois pour nous aider à améliorer l'app."
+          },
+          "supportData": {
+            "title": "Communications de Support",
+            "content": "Conservées pendant 2 ans pour nous aider à fournir un meilleur support et résoudre les litiges."
+          }
+        },
+        "deletion": {
+          "title": "Suppression des Données",
+          "intro": "Vous pouvez supprimer vos données des manières suivantes :",
+          "items": [
+            "Éléments Individuels : Supprimez des transactions ou budgets spécifiques dans l'app",
+            "Toutes les Données de l'App : Paramètres → Données → Supprimer Toutes les Données",
+            "Suppression Complète : Désinstallez l'app de votre appareil",
+            "Sauvegardes Cloud : Supprimez les sauvegardes de votre compte iCloud ou Google Drive"
+          ],
+          "note": "Note : Une fois les données supprimées de votre appareil, nous ne pouvons pas les récupérer car nous ne maintenons pas de copies sur serveur."
+        }
+      },
+      "security": {
+        "title": "7. Mesures de Sécurité et Chiffrement",
+        "intro": "Nous mettons en œuvre des mesures de sécurité standard de l'industrie pour protéger vos données :",
+        "localEncryption": {
+          "title": "Chiffrement Local",
+          "content": "Toutes les données stockées sur votre appareil sont chiffrées en utilisant le chiffrement AES-256. iOS utilise la Protection des Données, Android utilise le chiffrement AES."
+        },
+        "biometric": {
+          "title": "Authentification Biométrique",
+          "content": "Authentification optionnelle avec Face ID, Touch ID ou empreinte digitale pour accéder à l'app."
+        },
+        "secureBackups": {
+          "title": "Sauvegardes Sécurisées",
+          "content": "Les sauvegardes cloud optionnelles sont chiffrées avant le téléchargement en utilisant des protocoles standard de l'industrie."
+        },
+        "noServerStorage": {
+          "title": "Pas de Stockage sur Serveur",
+          "content": "Par défaut, aucune donnée n'est stockée sur nos serveurs, minimisant l'exposition aux violations de données."
+        },
+        "limitations": {
+          "title": "Limitations de Sécurité",
+          "content": "Bien que nous prenions des mesures étendues pour protéger vos données, aucune méthode de stockage électronique n'est 100% sûre. Nous recommandons d'activer la sécurité au niveau de l'appareil (PIN, mot de passe, biométrique) et de maintenir à jour le système d'exploitation de votre appareil."
+        }
+      },
+      "international": {
+        "title": "8. Transferts Internationaux de Données et Conformité",
+        "intro": "SmartSpend est conçu pour garder vos données locales sur votre appareil. Cependant, certaines fonctionnalités optionnelles peuvent impliquer des transferts internationaux de données :",
+        "gdpr": {
+          "title": "RGPD (Union Européenne)",
+          "content": "Pour les utilisateurs de l'UE, nous nous conformons au Règlement Général sur la Protection des Données. Si vous optez pour les analyses, les données peuvent être transférées vers les États-Unis sous Clauses Contractuelles Types (CCT). Vous pouvez retirer votre consentement à tout moment."
+        },
+        "ccpa": {
+          "title": "CCPA (Californie, États-Unis)",
+          "content": "Les résidents californiens ont le droit de savoir quelles informations personnelles sont collectées, le droit à la suppression et le droit de refuser la vente d'informations personnelles. Nous ne vendons pas d'informations personnelles."
+        },
+        "lgpd": {
+          "title": "LGPD (Brésil)",
+          "content": "Nous nous conformons à la Loi Générale de Protection des Données. Les utilisateurs brésiliens ont des droits à la confirmation du traitement, à l'accès, à la rectification et à la suppression des données personnelles."
+        },
+        "other": {
+          "title": "Autres Juridictions",
+          "content": "Nous nous efforçons de nous conformer aux lois sur la confidentialité dans toutes les juridictions où notre app est disponible, y compris PIPEDA (Canada), POPIA (Afrique du Sud) et autres."
+        },
+        "contact": "Si vous avez des questions sur la manière dont nous nous conformons aux réglementations spécifiques de confidentialité dans votre région, veuillez nous contacter en utilisant les informations fournies ci-dessous."
+      },
+      "cookies": {
+        "title": "9. Cookies et Technologies de Suivi",
+        "mobileApp": {
+          "title": "Application Mobile",
+          "content": "L'application mobile SmartSpend n'utilise pas de cookies. Nous utilisons le stockage local sur votre appareil pour sauvegarder vos préférences et données. Ce stockage est :",
+          "items": [
+            "Contenu entièrement sur votre appareil",
+            "Non accessible aux tiers",
+            "Supprimé lorsque vous désinstallez l'app (sauf sauvegarde cloud)"
+          ]
+        },
+        "website": {
+          "title": "Site Web",
+          "content": "Notre site web peut utiliser des cookies essentiels pour la fonctionnalité et des cookies d'analyse optionnels. Lorsque vous visitez notre site web, une bannière de consentement aux cookies vous sera présentée vous permettant de contrôler les cookies non essentiels."
+        },
+        "types": {
+          "title": "Types de Cookies que Nous Pouvons Utiliser",
+          "essential": "Essentiels : Requis pour que le site web fonctionne correctement",
+          "analytics": "Analyses : Nous aident à comprendre comment les visiteurs interagissent avec notre site web (optionnel)",
+          "preferences": "Préférences : Se souviennent de vos paramètres et préférences"
+        }
+      },
+      "children": {
+        "title": "10. Confidentialité des Enfants (Conformité COPPA)",
+        "intro": "SmartSpend n'est pas destiné à être utilisé par des enfants de moins de 13 ans (ou l'âge minimum requis pour donner son consentement dans votre juridiction). Nous ne collectons pas sciemment d'informations personnelles auprès d'enfants de moins de 13 ans.",
+        "parentalNotice": {
+          "title": "Avis aux Parents",
+          "content": "Si vous êtes parent ou tuteur et pensez que votre enfant de moins de 13 ans nous a fourni des informations personnelles, veuillez nous contacter immédiatement. Nous prendrons des mesures pour supprimer ces informations et résilier le compte de l'enfant si applicable."
+        },
+        "compliance": {
+          "intro": "Conformément à la Children's Online Privacy Protection Act (COPPA) et aux réglementations similaires dans le monde :",
+          "items": [
+            "Nous ne faisons pas de marketing ciblé vers les enfants de moins de 13 ans",
+            "Nous ne collectons pas d'informations personnelles auprès d'enfants de moins de 13 ans",
+            "Les parents peuvent consulter, supprimer ou refuser la collecte ultérieure des informations de leur enfant"
+          ]
+        }
+      },
+      "contact": {
+        "title": "11. Informations de Contact",
+        "intro": "Si vous avez des questions, préoccupations ou demandes concernant cette Politique de Confidentialité ou nos pratiques de données, veuillez nous contacter :",
+        "privacyInquiries": {
+          "title": "Demandes de Confidentialité",
+          "email": "privacy@smartspend.app",
+          "supportNote": "Pour les demandes de support générales, veuillez visiter notre page de contact."
+        },
+        "dpo": {
+          "title": "Délégué à la Protection des Données",
+          "content": "Pour les demandes liées au RGPD ou pour exercer vos droits de protection des données de l'UE, veuillez contacter notre Délégué à la Protection des Données à :",
+          "email": "dpo@smartspend.app"
+        },
+        "responseTime": "Nous visons à répondre à toutes les demandes liées à la confidentialité dans un délai de 30 jours. Pour les demandes complexes ou les volumes élevés, cela peut prendre jusqu'à 90 jours, auquel cas nous vous en informerons."
+      }
+    },
+    "changesNotice": {
+      "title": "Modifications de Cette Politique de Confidentialité",
+      "content": "Nous pouvons mettre à jour notre Politique de Confidentialité de temps à autre. Nous vous informerons de tout changement en publiant la nouvelle Politique de Confidentialité sur cette page et en mettant à jour la date de \"Dernière Mise à Jour\". Pour les changements importants, nous fournirons un avis plus visible (y compris, pour certains services, une notification par e-mail des modifications de la Politique de Confidentialité). Il vous est conseillé de consulter cette Politique de Confidentialité périodiquement pour tout changement."
+    },
+    "legalLinks": {
+      "terms": "Conditions de Service",
+      "privacy": "Politique de Confidentialité",
+      "contact": "Contactez-Nous"
+    }
+  }
+}
