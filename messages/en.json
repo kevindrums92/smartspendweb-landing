@@ -9,6 +9,7 @@
     "features": "Features",
     "privacy": "Privacy",
     "download": "Download",
+    "contact": "Contact",
     "budget": "Budget",
     "stats": "Statistics",
     "settings": "Settings"
@@ -268,12 +269,20 @@
       "other": "Other"
     },
     "errors": {
-      "name.min": "Name must be at least 2 characters",
-      "name.max": "Name cannot exceed 100 characters",
-      "email.invalid": "Please enter a valid email",
-      "subject.required": "Please select a subject",
-      "message.min": "Message must be at least 20 characters",
-      "message.max": "Message cannot exceed 5000 characters",
+      "name": {
+        "min": "Name must be at least 2 characters",
+        "max": "Name cannot exceed 100 characters"
+      },
+      "email": {
+        "invalid": "Please enter a valid email"
+      },
+      "subject": {
+        "required": "Please select a subject"
+      },
+      "message": {
+        "min": "Message must be at least 20 characters",
+        "max": "Message cannot exceed 5000 characters"
+      },
       "rate_limit_exceeded": "You've sent too many messages. Please try again in 15 minutes.",
       "missing_fields": "Please fill in all required fields",
       "invalid_email": "Invalid email",
@@ -301,13 +310,6 @@
       "subtitle": "We appreciate your patience while we set up our email infrastructure.",
       "button": "Send another message"
     }
-  },
-  "navigation": {
-    "home": "Home",
-    "features": "Features",
-    "privacy": "Privacy",
-    "download": "Download",
-    "contact": "Contact"
   },
   "privacyPolicy": {
     "metadata": {

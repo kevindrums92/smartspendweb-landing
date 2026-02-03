@@ -9,6 +9,7 @@
     "features": "Recursos",
     "privacy": "Privacidade",
     "download": "Download",
+    "contact": "Contato",
     "budget": "Orçamento",
     "stats": "Estatísticas",
     "settings": "Configurações"
@@ -268,12 +269,20 @@
       "other": "Outro"
     },
     "errors": {
-      "name.min": "O nome deve ter pelo menos 2 caracteres",
-      "name.max": "O nome não pode exceder 100 caracteres",
-      "email.invalid": "Digite um e-mail válido",
-      "subject.required": "Selecione um assunto",
-      "message.min": "A mensagem deve ter pelo menos 20 caracteres",
-      "message.max": "A mensagem não pode exceder 5000 caracteres",
+      "name": {
+        "min": "O nome deve ter pelo menos 2 caracteres",
+        "max": "O nome não pode exceder 100 caracteres"
+      },
+      "email": {
+        "invalid": "Digite um e-mail válido"
+      },
+      "subject": {
+        "required": "Selecione um assunto"
+      },
+      "message": {
+        "min": "A mensagem deve ter pelo menos 20 caracteres",
+        "max": "A mensagem não pode exceder 5000 caracteres"
+      },
       "rate_limit_exceeded": "Você enviou muitas mensagens. Tente novamente em 15 minutos.",
       "missing_fields": "Por favor, preencha todos os campos obrigatórios",
       "invalid_email": "E-mail inválido",
@@ -301,13 +310,6 @@
       "subtitle": "Agradecemos sua paciência enquanto configuramos nossa infraestrutura de e-mail.",
       "button": "Enviar outra mensagem"
     }
-  },
-  "navigation": {
-    "home": "Início",
-    "features": "Recursos",
-    "privacy": "Privacidade",
-    "download": "Download",
-    "contact": "Contato"
   },
   "privacyPolicy": {
     "metadata": {

@@ -9,6 +9,7 @@
     "features": "Fonctionnalités",
     "privacy": "Confidentialité",
     "download": "Télécharger",
+    "contact": "Contact",
     "budget": "Budget",
     "stats": "Statistiques",
     "settings": "Paramètres"
@@ -268,12 +269,20 @@
       "other": "Autre"
     },
     "errors": {
-      "name.min": "Le nom doit contenir au moins 2 caractères",
-      "name.max": "Le nom ne peut pas dépasser 100 caractères",
-      "email.invalid": "Veuillez entrer un e-mail valide",
-      "subject.required": "Veuillez sélectionner un sujet",
-      "message.min": "Le message doit contenir au moins 20 caractères",
-      "message.max": "Le message ne peut pas dépasser 5000 caractères",
+      "name": {
+        "min": "Le nom doit contenir au moins 2 caractères",
+        "max": "Le nom ne peut pas dépasser 100 caractères"
+      },
+      "email": {
+        "invalid": "Veuillez entrer un e-mail valide"
+      },
+      "subject": {
+        "required": "Veuillez sélectionner un sujet"
+      },
+      "message": {
+        "min": "Le message doit contenir au moins 20 caractères",
+        "max": "Le message ne peut pas dépasser 5000 caractères"
+      },
       "rate_limit_exceeded": "Vous avez envoyé trop de messages. Réessayez dans 15 minutes.",
       "missing_fields": "Veuillez remplir tous les champs obligatoires",
       "invalid_email": "E-mail invalide",
@@ -301,13 +310,6 @@
       "subtitle": "Nous vous remercions de votre patience pendant que nous configurons notre infrastructure de messagerie.",
       "button": "Envoyer un autre message"
     }
-  },
-  "navigation": {
-    "home": "Accueil",
-    "features": "Fonctionnalités",
-    "privacy": "Confidentialité",
-    "download": "Télécharger",
-    "contact": "Contact"
   },
   "privacyPolicy": {
     "metadata": {
