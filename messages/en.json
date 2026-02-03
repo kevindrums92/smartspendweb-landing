@@ -616,5 +616,11 @@
       "privacy": "Privacy Policy",
       "contact": "Contact Us"
     }
+  },
+  "error": {
+    "title": "Something went wrong",
+    "message": "An unexpected error occurred. Please try again.",
+    "retry": "Retry",
+    "goHome": "Go home"
   }
 }

@@ -616,5 +616,11 @@
       "privacy": "Política de Privacidad",
       "contact": "Contáctanos"
     }
+  },
+  "error": {
+    "title": "Algo salió mal",
+    "message": "Ocurrió un error inesperado. Por favor intenta nuevamente.",
+    "retry": "Reintentar",
+    "goHome": "Ir al inicio"
   }
 }
