@@ -212,7 +212,7 @@ export async function GET() {
 
   try {
     // Try to get account info to verify API key is valid
-    const account = await resend.apiKeys.list();
+    void await resend.apiKeys.list();
     return NextResponse.json(
       { status: "healthy", message: "Email service is available" },
       { status: 200 }

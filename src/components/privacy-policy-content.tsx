@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useI18n } from "@/i18n/i18n-context";
 import {
   ChevronDown,
   Shield,
@@ -101,7 +100,7 @@ function TableOfContents({ sections, onNavigate }: { sections: { id: string; tit
 }
 
 export function PrivacyPolicyContent() {
-  const { t, locale } = useI18n();
+  // TODO: Translate privacy policy content (see Task #4 - Refactorizar Privacy Policy Component)
   const [openSections, setOpenSections] = useState<Record<string, boolean>>({
     "company-info": true,
     "data-collection": true,
@@ -405,8 +404,8 @@ export function PrivacyPolicyContent() {
                     If you enable optional cloud backup, your encrypted data may be stored using:
                   </p>
                   <ul className="list-disc list-inside space-y-2 ml-4 mt-2 text-sm">
-                    <li><strong>iCloud:</strong> Apple's cloud storage service (for iOS users)</li>
-                    <li><strong>Google Drive:</strong> Google's cloud storage service (for Android users)</li>
+                    <li><strong>iCloud:</strong> Apple&apos;s cloud storage service (for iOS users)</li>
+                    <li><strong>Google Drive:</strong> Google&apos;s cloud storage service (for Android users)</li>
                   </ul>
                   <p className="text-sm mt-2 italic">
                     Your data is encrypted before being uploaded to these services.
@@ -618,9 +617,9 @@ export function PrivacyPolicyContent() {
                 <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-4 mt-4">
                   <h4 className="font-medium text-red-800 dark:text-red-200 mb-2">Security Limitations</h4>
                   <p className="text-sm text-red-800 dark:text-red-200">
-                    While we take extensive measures to protect your data, no method of electronic storage 
-                    is 100% secure. We recommend enabling device-level security (PIN, password, biometric) 
-                    and keeping your device's operating system updated.
+                    While we take extensive measures to protect your data, no method of electronic storage
+                    is 100% secure. We recommend enabling device-level security (PIN, password, biometric)
+                    and keeping your device&apos;s operating system updated.
                   </p>
                 </div>
               </div>
@@ -738,20 +737,20 @@ export function PrivacyPolicyContent() {
                     Parental Notice
                   </h4>
                   <p className="text-sm text-amber-800 dark:text-amber-200">
-                    If you are a parent or guardian and believe your child under 13 has provided us 
-                    with personal information, please contact us immediately. We will take steps to 
-                    remove that information and terminate the child's account if applicable.
+                    If you are a parent or guardian and believe your child under 13 has provided us
+                    with personal information, please contact us immediately. We will take steps to
+                    remove that information and terminate the child&apos;s account if applicable.
                   </p>
                 </div>
 
                 <p>
-                  In accordance with the Children's Online Privacy Protection Act (COPPA) and similar 
+                  In accordance with the Children&apos;s Online Privacy Protection Act (COPPA) and similar
                   regulations worldwide:
                 </p>
                 <ul className="list-disc list-inside space-y-2 ml-4">
                   <li>We do not market to children under 13</li>
                   <li>We do not collect personal information from children under 13</li>
-                  <li>Parents can review, delete, or refuse further collection of their child's information</li>
+                  <li>Parents can review, delete, or refuse further collection of their child&apos;s information</li>
                 </ul>
               </div>
             </ExpandableSection>
@@ -812,10 +811,10 @@ export function PrivacyPolicyContent() {
                 Changes to This Privacy Policy
               </h3>
               <p className="text-muted text-sm leading-relaxed">
-                We may update our Privacy Policy from time to time. We will notify you of any changes by 
-                posting the new Privacy Policy on this page and updating the "Last Updated" date. 
-                For significant changes, we will provide a more prominent notice (including, for certain services, 
-                email notification of Privacy Policy changes). You are advised to review this Privacy Policy 
+                We may update our Privacy Policy from time to time. We will notify you of any changes by
+                posting the new Privacy Policy on this page and updating the &quot;Last Updated&quot; date.
+                For significant changes, we will provide a more prominent notice (including, for certain services,
+                email notification of Privacy Policy changes). You are advised to review this Privacy Policy
                 periodically for any changes.
               </p>
             </div>

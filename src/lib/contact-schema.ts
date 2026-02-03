@@ -8,21 +8,32 @@ export const subjectOptions = [
   "other",
 ] as const;
 
-export const contactSchema = z.object({
-  name: z.string()
-    .min(2, { message: "contact.errors.name.min" })
-    .max(100, { message: "contact.errors.name.max" }),
-  email: z.string()
-    .email({ message: "contact.errors.email.invalid" }),
-  subject: z.enum(subjectOptions, {
-    message: "contact.errors.subject.required",
-  }),
-  message: z.string()
-    .min(20, { message: "contact.errors.message.min" })
-    .max(5000, { message: "contact.errors.message.max" }),
-  newsletter: z.boolean().optional(),
-  // Honeypot field for spam protection
-  website: z.string().optional(),
-});
+// Type for the contact form data
+export type ContactFormData = {
+  name: string;
+  email: string;
+  subject: typeof subjectOptions[number];
+  message: string;
+  newsletter?: boolean;
+  website?: string;
+};
 
-export type ContactFormData = z.infer<typeof contactSchema>;
+// Factory function that creates a schema with translated error messages
+export function createContactSchema(t: (key: string) => string) {
+  return z.object({
+    name: z.string()
+      .min(2, { message: t("contact.errors.name.min") })
+      .max(100, { message: t("contact.errors.name.max") }),
+    email: z.string()
+      .email({ message: t("contact.errors.email.invalid") }),
+    subject: z.enum(subjectOptions, {
+      message: t("contact.errors.subject.required"),
+    }),
+    message: z.string()
+      .min(20, { message: t("contact.errors.message.min") })
+      .max(5000, { message: t("contact.errors.message.max") }),
+    newsletter: z.boolean().optional(),
+    // Honeypot field for spam protection
+    website: z.string().optional(),
+  });
+}

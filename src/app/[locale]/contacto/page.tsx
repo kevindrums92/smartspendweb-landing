@@ -7,7 +7,7 @@ import { Mail, MapPin, Clock } from "lucide-react";
 import { useI18n } from "@/i18n/i18n-context";
 
 export default function ContactPage() {
-  const { t, locale } = useI18n();
+  const { t } = useI18n();
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-[#0a0c10]">

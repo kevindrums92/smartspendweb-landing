@@ -6,7 +6,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { motion, AnimatePresence } from "framer-motion";
 import { Send, CheckCircle, AlertCircle, Loader2, Mail, Info } from "lucide-react";
 import { useI18n } from "@/i18n/i18n-context";
-import { contactSchema, type ContactFormData, subjectOptions } from "@/lib/contact-schema";
+import { createContactSchema, type ContactFormData, subjectOptions } from "@/lib/contact-schema";
+import { useMemo } from "react";
 
 type FormStatus = "idle" | "loading" | "success" | "error" | "fallback";
 
@@ -23,6 +24,9 @@ export function ContactForm() {
   const [status, setStatus] = useState<FormStatus>("idle");
   const [errorMessage, setErrorMessage] = useState("");
   const [fallbackMessage, setFallbackMessage] = useState("");
+
+  // Create schema with translated error messages using useMemo
+  const contactSchema = useMemo(() => createContactSchema(t), [t]);
 
   const {
     register,
@@ -195,7 +199,7 @@ export function ContactForm() {
                   className="mt-2 text-sm text-red-500 flex items-center gap-1"
                 >
                   <AlertCircle className="w-4 h-4" />
-                  {errors.name.message ? t(errors.name.message as string) : t("contact.errors.name.min")}
+                  {errors.name.message}
                 </motion.p>
               )}
             </div>
@@ -229,7 +233,7 @@ export function ContactForm() {
                   className="mt-2 text-sm text-red-500 flex items-center gap-1"
                 >
                   <AlertCircle className="w-4 h-4" />
-                  {errors.email.message ? t(errors.email.message as string) : t("contact.errors.email.invalid")}
+                  {errors.email.message}
                 </motion.p>
               )}
             </div>
@@ -268,7 +272,7 @@ export function ContactForm() {
                   className="mt-2 text-sm text-red-500 flex items-center gap-1"
                 >
                   <AlertCircle className="w-4 h-4" />
-                  {t("contact.errors.subject.required")}
+                  {errors.subject.message}
                 </motion.p>
               )}
             </div>
@@ -302,7 +306,7 @@ export function ContactForm() {
                   className="mt-2 text-sm text-red-500 flex items-center gap-1"
                 >
                   <AlertCircle className="w-4 h-4" />
-                  {errors.message.message ? t(errors.message.message as string) : t("contact.errors.message.min")}
+                  {errors.message.message}
                 </motion.p>
               )}
             </div>
