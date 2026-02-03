@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import "../globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { I18nProvider } from "@/i18n/i18n-context";
-import { locales, type Locale } from "@/i18n/config";
+import { locales, defaultLocale, type Locale } from "@/i18n/config";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -17,9 +17,20 @@ export async function generateMetadata({ params }: {
 }): Promise<Metadata> {
   const { locale } = await params;
 
-  // Load translations for the current locale using require to bypass webpack issues
-  const messagesModule = await import(`../../../messages/${locale}.json`);
-  const messages = messagesModule.default || messagesModule;
+  // Validate locale to prevent incorrect imports
+  const validLocale = locales.includes(locale as Locale) ? locale : defaultLocale;
+
+  // Load translations for the current locale
+  let messages;
+  try {
+    const messagesModule = await import(`../../../messages/${validLocale}.json`);
+    messages = messagesModule.default || messagesModule;
+  } catch (error) {
+    console.error(`[generateMetadata] Failed to load messages for locale: ${validLocale}`, error);
+    // Fallback to default locale
+    const fallbackModule = await import(`../../../messages/${defaultLocale}.json`);
+    messages = fallbackModule.default || fallbackModule;
+  }
 
   // Map locale to Open Graph locale format
   const ogLocaleMap: Record<string, string> = {
