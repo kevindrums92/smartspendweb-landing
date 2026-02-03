@@ -39,10 +39,10 @@ export default function ContactPage() {
                   {t("contact.info.email.description")}
                 </p>
                 <a 
-                  href="mailto:support@joratech.org" 
+                  href="mailto:support@jotatech.org" 
                   className="text-[#18B7B0] hover:underline font-medium"
                 >
-                  support@joratech.org
+                  support@jotatech.org
                 </a>
               </div>
 
