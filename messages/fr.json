@@ -1,7 +1,8 @@
 {
   "metadata": {
     "title": "SmartSpend - Suivi des Dépenses Hors Ligne & 100% Privé",
-    "description": "L'outil de budget Local-First ultime pour iOS et Android. Votre argent, vos règles. Hors ligne et 100% Privé."
+    "description": "L'outil de budget Local-First ultime pour iOS et Android. Votre argent, vos règles. Hors ligne et 100% Privé.",
+    "keywords": ["suivi des dépenses", "app de finances hors ligne", "budget personnel", "local-first", "finances personnelles", "app de budget", "confidentialité financière"]
   },
   "navigation": {
     "home": "Accueil",

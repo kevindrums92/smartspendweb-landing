@@ -12,18 +12,42 @@ const inter = Inter({
   variable:"--font-inter",
 });
 
-export const metadata: Metadata = {
-  title: "SmartSpend - Control de Gastos Offline y 100% Privado",
-  description: "La herramienta definitiva de presupuesto Local-First para iOS y Android. Tu dinero, tus reglas. Sin conexión y 100% Privado.",
-  keywords: ["control de gastos", "app de finanzas offline", "presupuesto personal local-first", "finanzas personales", "app de presupuesto"],
-  authors: [{ name: "SmartSpend" }],
-  openGraph: {
-    title: "SmartSpend - Control de Gastos Offline",
-    description: "La herramienta definitiva de presupuesto Local-First para iOS y Android.",
-    type: "website",
-    locale: "es_CO",
-  },
-};
+export async function generateMetadata({ params }: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+
+  // Load translations for the current locale using require to bypass webpack issues
+  const messagesModule = await import(`../../../messages/${locale}.json`);
+  const messages = messagesModule.default || messagesModule;
+
+  // Map locale to Open Graph locale format
+  const ogLocaleMap: Record<string, string> = {
+    es: "es_ES",
+    en: "en_US",
+    pt: "pt_BR",
+    fr: "fr_FR",
+  };
+
+  return {
+    title: messages.metadata.title,
+    description: messages.metadata.description,
+    keywords: messages.metadata.keywords || [],
+    authors: [{ name: "SmartSpend" }],
+    openGraph: {
+      title: messages.metadata.title,
+      description: messages.metadata.description,
+      type: "website",
+      locale: ogLocaleMap[locale] || "es_ES",
+      siteName: "SmartSpend",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: messages.metadata.title,
+      description: messages.metadata.description,
+    },
+  };
+}
 
 export default async function LocaleLayout({
   children,

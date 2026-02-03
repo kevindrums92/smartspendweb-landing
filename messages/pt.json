@@ -1,7 +1,8 @@
 {
   "metadata": {
     "title": "SmartSpend - Controle de Gastos Offline e 100% Privado",
-    "description": "A ferramenta definitiva de orçamento Local-First para iOS e Android. Seu dinheiro, suas regras. Offline e 100% Privado."
+    "description": "A ferramenta definitiva de orçamento Local-First para iOS e Android. Seu dinheiro, suas regras. Offline e 100% Privado.",
+    "keywords": ["controle de gastos", "app de finanças offline", "orçamento pessoal", "local-first", "finanças pessoais", "app de orçamento", "privacidade financeira"]
   },
   "navigation": {
     "home": "Início",

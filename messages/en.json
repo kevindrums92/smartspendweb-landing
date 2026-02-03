@@ -1,7 +1,8 @@
 {
   "metadata": {
     "title": "SmartSpend - Offline Expense Tracking & 100% Private",
-    "description": "The ultimate Local-First budgeting tool for iOS and Android. Your money, your rules. Offline and 100% Private."
+    "description": "The ultimate Local-First budgeting tool for iOS and Android. Your money, your rules. Offline and 100% Private.",
+    "keywords": ["expense tracking", "offline finance app", "personal budget", "local-first", "personal finance", "budgeting app", "financial privacy"]
   },
   "navigation": {
     "home": "Home",
