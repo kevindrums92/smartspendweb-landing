@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/sections/footer";
-import { PrivacyPolicyContent } from "@/components/privacy-policy-content";
+import { PrivacyPolicyContent } from "@/components/privacy-policy";
 
 export const metadata: Metadata = {
   title: "Privacy Policy - SmartSpend",
