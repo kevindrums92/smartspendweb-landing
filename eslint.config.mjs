@@ -23,6 +23,8 @@ const eslintConfig = [
       ".claude/**",
       ".codex/**",
       ".opencode/**",
+      "jest.config.js",
+      "jest.setup.js",
     ],
   },
 ];
