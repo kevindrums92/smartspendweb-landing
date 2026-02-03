@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useI18n } from "@/i18n/i18n-context";
 import {
   ChevronDown,
   Shield,
@@ -101,6 +102,7 @@ function TableOfContents({ sections, onNavigate }: { sections: { id: string; tit
 
 export function PrivacyPolicyContent() {
   // TODO: Translate privacy policy content (see Task #4 - Refactorizar Privacy Policy Component)
+  const { locale } = useI18n();
   const [openSections, setOpenSections] = useState<Record<string, boolean>>({
     "company-info": true,
     "data-collection": true,

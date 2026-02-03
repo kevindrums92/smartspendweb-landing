@@ -4,14 +4,11 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  // Disable eslint during build for Heroku
+  // Disable eslint during build for Heroku (faster builds)
   eslint: {
     ignoreDuringBuilds: true,
   },
-  // Disable typescript errors during build
-  typescript: {
-    ignoreBuildErrors: true,
-  },
+  // TypeScript errors are now enabled - fix all errors before build passes
 };
 
 export default nextConfig;
