@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
+import { Ratelimit } from "@upstash/ratelimit";
+import { Redis } from "@upstash/redis";
 
 const resendApiKey = process.env.RESEND_API_KEY;
 const resend = resendApiKey ? new Resend(resendApiKey) : null;
@@ -7,17 +9,54 @@ const resend = resendApiKey ? new Resend(resendApiKey) : null;
 // Configuration for fallback behavior
 const FALLBACK_EMAIL = process.env.FALLBACK_EMAIL || "support@jotatech.org";
 
-// Simple in-memory rate limiting store
-const rateLimitStore = new Map<string, { count: number; timestamp: number }>();
+// Rate limiting configuration
 const RATE_LIMIT = 3;
-const RATE_LIMIT_WINDOW = 15 * 60 * 1000; // 15 minutes
+const RATE_LIMIT_WINDOW = "15 m"; // 15 minutes
+
+// Initialize Upstash Redis rate limiter (if configured)
+let ratelimit: Ratelimit | null = null;
+
+if (process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN) {
+  try {
+    const redis = new Redis({
+      url: process.env.UPSTASH_REDIS_REST_URL,
+      token: process.env.UPSTASH_REDIS_REST_TOKEN,
+    });
+
+    ratelimit = new Ratelimit({
+      redis,
+      limiter: Ratelimit.slidingWindow(RATE_LIMIT, RATE_LIMIT_WINDOW),
+      analytics: true,
+      prefix: "ratelimit:contact",
+    });
+  } catch (error) {
+    console.error("[Rate Limit] Failed to initialize Upstash:", error);
+    ratelimit = null;
+  }
+}
+
+// Fallback: Simple in-memory rate limiting store (used when Upstash is not configured)
+const rateLimitStore = new Map<string, { count: number; timestamp: number }>();
+const RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000; // 15 minutes in milliseconds
 
 function getClientIP(request: NextRequest): string {
   const forwarded = request.headers.get("x-forwarded-for");
   return forwarded?.split(",")[0]?.trim() || "unknown";
 }
 
-function checkRateLimit(ip: string): boolean {
+async function checkRateLimit(ip: string): Promise<boolean> {
+  // Try Upstash first if configured
+  if (ratelimit) {
+    try {
+      const { success } = await ratelimit.limit(ip);
+      return success;
+    } catch (error) {
+      console.error("[Rate Limit] Upstash check failed, falling back to in-memory:", error);
+      // Fall through to in-memory rate limiting
+    }
+  }
+
+  // Fallback: In-memory rate limiting
   const now = Date.now();
   const record = rateLimitStore.get(ip);
 
@@ -26,7 +65,7 @@ function checkRateLimit(ip: string): boolean {
     return true;
   }
 
-  if (now - record.timestamp > RATE_LIMIT_WINDOW) {
+  if (now - record.timestamp > RATE_LIMIT_WINDOW_MS) {
     // Reset window
     rateLimitStore.set(ip, { count: 1, timestamp: now });
     return true;
@@ -83,7 +122,7 @@ export async function POST(request: NextRequest) {
     const ip = getClientIP(request);
 
     // Check rate limit
-    if (!checkRateLimit(ip)) {
+    if (!(await checkRateLimit(ip))) {
       return NextResponse.json(
         { error: "rate_limit_exceeded" },
         { status: 429 }
