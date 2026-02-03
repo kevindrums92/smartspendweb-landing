@@ -11,9 +11,9 @@
 | Categoría | Completadas | Total | Progreso |
 |-----------|-------------|-------|----------|
 | 🚨 Alta Prioridad | 3 | 3 | 100% ✅ |
-| ⚠️ Media Prioridad | 2 | 3 | 67% |
+| ⚠️ Media Prioridad | 3 | 3 | 100% ✅ |
 | 💡 Baja Prioridad | 0 | 3 | 0% |
-| **TOTAL** | **5** | **9** | **56%** |
+| **TOTAL** | **6** | **9** | **67%** |
 
 ---
 
@@ -252,7 +252,7 @@ const rateLimitStore = new Map(); // ❌ Se pierde en restart/redeploy
 
 ### 6. ✅ Agregar Tests Unitarios
 
-**Estado:** 🔴 Pendiente
+**Estado:** ✅ Completado (2026-02-03)
 **Prioridad:** Media
 **Tiempo estimado:** 3-4 horas (setup + tests básicos)
 **Asignado a:** -
