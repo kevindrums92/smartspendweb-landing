@@ -195,7 +195,7 @@ export function ContactForm() {
                   className="mt-2 text-sm text-red-500 flex items-center gap-1"
                 >
                   <AlertCircle className="w-4 h-4" />
-                  {errors.name.message ? t(errors.name.message) : t("contact.errors.name.min")}
+                  {errors.name.message ? t(errors.name.message as string) : t("contact.errors.name.min")}
                 </motion.p>
               )}
             </div>
@@ -229,7 +229,7 @@ export function ContactForm() {
                   className="mt-2 text-sm text-red-500 flex items-center gap-1"
                 >
                   <AlertCircle className="w-4 h-4" />
-                  {errors.email.message ? t(errors.email.message) : t("contact.errors.email.invalid")}
+                  {errors.email.message ? t(errors.email.message as string) : t("contact.errors.email.invalid")}
                 </motion.p>
               )}
             </div>
@@ -268,7 +268,7 @@ export function ContactForm() {
                   className="mt-2 text-sm text-red-500 flex items-center gap-1"
                 >
                   <AlertCircle className="w-4 h-4" />
-                  {errors.subject.message ? t(errors.subject.message) : t("contact.errors.subject.required")}
+                  {t("contact.errors.subject.required")}
                 </motion.p>
               )}
             </div>
@@ -302,7 +302,7 @@ export function ContactForm() {
                   className="mt-2 text-sm text-red-500 flex items-center gap-1"
                 >
                   <AlertCircle className="w-4 h-4" />
-                  {errors.message.message ? t(errors.message.message) : t("contact.errors.message.min")}
+                  {errors.message.message ? t(errors.message.message as string) : t("contact.errors.message.min")}
                 </motion.p>
               )}
             </div>
