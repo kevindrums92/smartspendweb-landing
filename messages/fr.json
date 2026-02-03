@@ -280,7 +280,10 @@
       "email_send_failed": "Erreur lors de l'envoi du message. Veuillez réessayer.",
       "internal_error": "Erreur interne du serveur",
       "network": "Erreur de connexion. Vérifiez votre internet.",
-      "default": "Une erreur s'est produite. Veuillez réessayer."
+      "default": "Une erreur s'est produite. Veuillez réessayer.",
+      "domain_not_verified": "Notre service de messagerie est en cours de configuration. Votre message a été enregistré.",
+      "email_service_unavailable": "Le service de messagerie est temporairement indisponible. Votre message a été enregistré.",
+      "fallback_default": "Votre message a été enregistré et nous vous contacterons à l'adresse e-mail que vous avez fournie."
     },
     "submit": {
       "button": "Envoyer le message",
@@ -289,6 +292,12 @@
     "success": {
       "title": "Message envoyé !",
       "message": "Merci de nous avoir contactés. Nous vous répondrons dès que possible.",
+      "button": "Envoyer un autre message"
+    },
+    "fallback": {
+      "title": "Message reçu !",
+      "message": "Notre service de messagerie est actuellement en cours de configuration. Votre message a été enregistré et nous vous contacterons à l'adresse e-mail que vous avez fournie.",
+      "subtitle": "Nous vous remercions de votre patience pendant que nous configurons notre infrastructure de messagerie.",
       "button": "Envoyer un autre message"
     }
   },

@@ -4,16 +4,25 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { motion, AnimatePresence } from "framer-motion";
-import { Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
+import { Send, CheckCircle, AlertCircle, Loader2, Mail, Info } from "lucide-react";
 import { useI18n } from "@/i18n/i18n-context";
 import { contactSchema, type ContactFormData, subjectOptions } from "@/lib/contact-schema";
 
-type FormStatus = "idle" | "loading" | "success" | "error";
+type FormStatus = "idle" | "loading" | "success" | "error" | "fallback";
+
+interface ApiResponse {
+  error?: string;
+  message?: string;
+  fallback?: boolean;
+  success?: boolean;
+  id?: string;
+}
 
 export function ContactForm() {
   const { t } = useI18n();
   const [status, setStatus] = useState<FormStatus>("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  const [fallbackMessage, setFallbackMessage] = useState("");
 
   const {
     register,
@@ -31,6 +40,7 @@ export function ContactForm() {
   const onSubmit = async (data: ContactFormData) => {
     setStatus("loading");
     setErrorMessage("");
+    setFallbackMessage("");
 
     try {
       const response = await fetch("/api/contact", {
@@ -39,10 +49,15 @@ export function ContactForm() {
         body: JSON.stringify(data),
       });
 
-      const result = await response.json();
+      const result: ApiResponse = await response.json();
 
-      if (response.ok) {
+      if (response.ok && result.success) {
         setStatus("success");
+        reset();
+      } else if (result.fallback) {
+        // Graceful degradation - form submission logged but email not sent
+        setStatus("fallback");
+        setFallbackMessage(result.message || t("contact.errors.fallback_default") as string);
         reset();
       } else {
         setStatus("error");
@@ -92,6 +107,43 @@ export function ContactForm() {
               className="px-6 py-3 rounded-xl bg-[#18B7B0] text-white font-medium hover:bg-[#149E98] transition-colors"
             >
               {t("contact.success.button")}
+            </button>
+          </motion.div>
+        ) : status === "fallback" ? (
+          <motion.div
+            key="fallback"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.9 }}
+            className="text-center py-12"
+          >
+            <motion.div
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
+              className="w-20 h-20 rounded-full bg-amber-500/20 flex items-center justify-center mx-auto mb-6"
+            >
+              <Mail className="w-10 h-10 text-amber-500" />
+            </motion.div>
+            <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white">
+              {t("contact.fallback.title")}
+            </h3>
+            <div className="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-xl p-4 mb-6 mx-4">
+              <div className="flex items-start gap-3">
+                <Info className="w-5 h-5 text-amber-600 dark:text-amber-400 shrink-0 mt-0.5" />
+                <p className="text-sm text-amber-800 dark:text-amber-200 text-left">
+                  {fallbackMessage || t("contact.fallback.message")}
+                </p>
+              </div>
+            </div>
+            <p className="text-gray-500 dark:text-gray-400 mb-6">
+              {t("contact.fallback.subtitle")}
+            </p>
+            <button
+              onClick={() => setStatus("idle")}
+              className="px-6 py-3 rounded-xl bg-[#18B7B0] text-white font-medium hover:bg-[#149E98] transition-colors"
+            >
+              {t("contact.fallback.button")}
             </button>
           </motion.div>
         ) : (

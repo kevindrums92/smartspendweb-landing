@@ -280,7 +280,10 @@
       "email_send_failed": "Error al enviar el mensaje. Intenta de nuevo.",
       "internal_error": "Error interno del servidor",
       "network": "Error de conexión. Verifica tu internet.",
-      "default": "Ha ocurrido un error. Intenta de nuevo."
+      "default": "Ha ocurrido un error. Intenta de nuevo.",
+      "domain_not_verified": "Nuestro servicio de correo está siendo configurado. Tu mensaje ha sido guardado.",
+      "email_service_unavailable": "El servicio de correo no está disponible temporalmente. Tu mensaje ha sido guardado.",
+      "fallback_default": "Tu mensaje ha sido guardado y te contactaremos al correo que proporcionaste."
     },
     "submit": {
       "button": "Enviar mensaje",
@@ -289,6 +292,12 @@
     "success": {
       "title": "¡Mensaje enviado!",
       "message": "Gracias por contactarnos. Te responderemos lo antes posible.",
+      "button": "Enviar otro mensaje"
+    },
+    "fallback": {
+      "title": "¡Mensaje recibido!",
+      "message": "Nuestro servicio de correo está siendo configurado actualmente. Tu mensaje ha sido guardado y te contactaremos al correo que proporcionaste.",
+      "subtitle": "Agradecemos tu paciencia mientras configuramos nuestra infraestructura de correo.",
       "button": "Enviar otro mensaje"
     }
   },

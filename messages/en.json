@@ -280,7 +280,10 @@
       "email_send_failed": "Failed to send message. Please try again.",
       "internal_error": "Internal server error",
       "network": "Connection error. Please check your internet.",
-      "default": "An error occurred. Please try again."
+      "default": "An error occurred. Please try again.",
+      "domain_not_verified": "Our email service is being configured. Your message has been logged.",
+      "email_service_unavailable": "Email service is temporarily unavailable. Your message has been logged.",
+      "fallback_default": "Your message has been logged and we will contact you at the email you provided."
     },
     "submit": {
       "button": "Send message",
@@ -289,6 +292,12 @@
     "success": {
       "title": "Message sent!",
       "message": "Thank you for contacting us. We'll get back to you as soon as possible.",
+      "button": "Send another message"
+    },
+    "fallback": {
+      "title": "Message received!",
+      "message": "Our email service is currently being configured. Your message has been saved and we will contact you at the email address you provided.",
+      "subtitle": "We appreciate your patience while we set up our email infrastructure.",
       "button": "Send another message"
     }
   },
