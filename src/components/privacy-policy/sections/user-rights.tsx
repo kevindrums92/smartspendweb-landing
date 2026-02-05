@@ -2,6 +2,7 @@
 
 import { Users, Eye, Key, Trash2, Database } from "lucide-react";
 import { ExpandableSection } from "../ExpandableSection";
+import { useI18n } from "@/i18n/i18n-context";
 
 interface UserRightsProps {
   isOpen: boolean;
@@ -9,75 +10,73 @@ interface UserRightsProps {
 }
 
 export function UserRights({ isOpen, onToggle }: UserRightsProps) {
+  const { t } = useI18n();
+
   return (
     <ExpandableSection
       id="user-rights"
       icon={Users}
-      title="5. Your Rights & Control Mechanisms"
+      title={t("privacyPolicy.sections.userRights.title")}
       isOpen={isOpen}
       onToggle={onToggle}
     >
       <div className="space-y-6">
         <p>
-          Depending on your location, you may have the following rights regarding your personal data:
+          {t("privacyPolicy.sections.userRights.intro")}
         </p>
 
         <div className="grid md:grid-cols-2 gap-4">
           <div className="bg-accent/50 rounded-lg p-4">
             <h4 className="font-medium text-foreground mb-2 flex items-center gap-2">
               <Eye className="w-4 h-4 text-primary" aria-hidden="true" />
-              Right to Access
+              {t("privacyPolicy.sections.userRights.access.title")}
             </h4>
             <p className="text-sm">
-              You can view all your data at any time within the app. Export your data in JSON or CSV format from Settings.
+              {t("privacyPolicy.sections.userRights.access.content")}
             </p>
           </div>
           <div className="bg-accent/50 rounded-lg p-4">
             <h4 className="font-medium text-foreground mb-2 flex items-center gap-2">
               <Key className="w-4 h-4 text-primary" aria-hidden="true" />
-              Right to Correction
+              {t("privacyPolicy.sections.userRights.correction.title")}
             </h4>
             <p className="text-sm">
-              Edit or update any transaction, budget, or profile information directly in the app.
+              {t("privacyPolicy.sections.userRights.correction.content")}
             </p>
           </div>
           <div className="bg-accent/50 rounded-lg p-4">
             <h4 className="font-medium text-foreground mb-2 flex items-center gap-2">
               <Trash2 className="w-4 h-4 text-primary" aria-hidden="true" />
-              Right to Deletion
+              {t("privacyPolicy.sections.userRights.deletion.title")}
             </h4>
             <p className="text-sm">
-              Delete individual records or all app data. Uninstalling the app removes all local data.
+              {t("privacyPolicy.sections.userRights.deletion.content")}
             </p>
           </div>
           <div className="bg-accent/50 rounded-lg p-4">
             <h4 className="font-medium text-foreground mb-2 flex items-center gap-2">
               <Database className="w-4 h-4 text-primary" aria-hidden="true" />
-              Right to Portability
+              {t("privacyPolicy.sections.userRights.portability.title")}
             </h4>
             <p className="text-sm">
-              Export your data in standard formats (JSON, CSV) to transfer to other services.
+              {t("privacyPolicy.sections.userRights.portability.content")}
             </p>
           </div>
         </div>
 
         <div>
-          <h4 className="font-medium text-foreground mb-3">How to Exercise Your Rights</h4>
+          <h4 className="font-medium text-foreground mb-3">{t("privacyPolicy.sections.userRights.howToExercise.title")}</h4>
           <ul className="list-disc list-inside space-y-2 ml-4">
-            <li><strong>Access/Export:</strong> Settings → Data → Export Data</li>
-            <li><strong>Correction:</strong> Edit any transaction or budget directly in the app</li>
-            <li><strong>Deletion:</strong> Settings → Data → Delete All Data, or uninstall the app</li>
-            <li><strong>Opt-out of Analytics:</strong> Settings → Privacy → Analytics → Disable</li>
-            <li><strong>Contact us:</strong> Use the contact information at the bottom of this policy</li>
+            <li dangerouslySetInnerHTML={{ __html: t("privacyPolicy.sections.userRights.howToExercise.items.0") }} />
+            <li dangerouslySetInnerHTML={{ __html: t("privacyPolicy.sections.userRights.howToExercise.items.1") }} />
+            <li dangerouslySetInnerHTML={{ __html: t("privacyPolicy.sections.userRights.howToExercise.items.2") }} />
+            <li dangerouslySetInnerHTML={{ __html: t("privacyPolicy.sections.userRights.howToExercise.items.3") }} />
+            <li dangerouslySetInnerHTML={{ __html: t("privacyPolicy.sections.userRights.howToExercise.items.4") }} />
           </ul>
         </div>
 
         <div className="bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-200 dark:border-emerald-800 rounded-lg p-4">
-          <p className="text-sm text-emerald-800 dark:text-emerald-200">
-            <strong>Regional Rights:</strong> Residents of the EU (GDPR), California (CCPA),
-            Brazil (LGPD), and other jurisdictions have additional rights. Contact us for
-            jurisdiction-specific requests.
-          </p>
+          <p className="text-sm text-emerald-800 dark:text-emerald-200" dangerouslySetInnerHTML={{ __html: t("privacyPolicy.sections.userRights.regionalRights") }} />
         </div>
       </div>
     </ExpandableSection>

@@ -2,6 +2,7 @@
 
 import { Baby } from "lucide-react";
 import { ExpandableSection } from "../ExpandableSection";
+import { useI18n } from "@/i18n/i18n-context";
 
 interface ChildrenPrivacyProps {
   isOpen: boolean;
@@ -9,40 +10,37 @@ interface ChildrenPrivacyProps {
 }
 
 export function ChildrenPrivacy({ isOpen, onToggle }: ChildrenPrivacyProps) {
+  const { t } = useI18n();
+
   return (
     <ExpandableSection
       id="children"
       icon={Baby}
-      title="10. Children's Privacy (COPPA Compliance)"
+      title={t("privacyPolicy.sections.children.title")}
       isOpen={isOpen}
       onToggle={onToggle}
     >
       <div className="space-y-4">
         <p>
-          SmartSpend is not intended for use by children under the age of 13 (or the minimum
-          age required for providing consent in your jurisdiction). We do not knowingly collect
-          personal information from children under 13.
+          {t("privacyPolicy.sections.children.intro")}
         </p>
 
         <div className="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg p-4">
           <h4 className="font-medium text-amber-800 dark:text-amber-200 mb-2">
-            Parental Notice
+            {t("privacyPolicy.sections.children.parentalNotice.title")}
           </h4>
           <p className="text-sm text-amber-800 dark:text-amber-200">
-            If you are a parent or guardian and believe your child under 13 has provided us
-            with personal information, please contact us immediately. We will take steps to
-            remove that information and terminate the child&apos;s account if applicable.
+            {t("privacyPolicy.sections.children.parentalNotice.content")}
           </p>
         </div>
 
         <p>
-          In accordance with the Children&apos;s Online Privacy Protection Act (COPPA) and similar
-          regulations worldwide:
+          {t("privacyPolicy.sections.children.compliance.intro")}
         </p>
         <ul className="list-disc list-inside space-y-2 ml-4">
-          <li>We do not market to children under 13</li>
-          <li>We do not collect personal information from children under 13</li>
-          <li>Parents can review, delete, or refuse further collection of their child&apos;s information</li>
+          <li>{t("privacyPolicy.sections.children.compliance.items.0")}</li>
+          <li>{t("privacyPolicy.sections.children.compliance.items.1")}</li>
+          <li>{t("privacyPolicy.sections.children.compliance.items.2")}</li>
         </ul>
       </div>
     </ExpandableSection>

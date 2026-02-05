@@ -2,6 +2,7 @@
 
 import { Lock, Fingerprint, Key, Shield } from "lucide-react";
 import { ExpandableSection } from "../ExpandableSection";
+import { useI18n } from "@/i18n/i18n-context";
 
 interface SecurityProps {
   isOpen: boolean;
@@ -9,65 +10,64 @@ interface SecurityProps {
 }
 
 export function Security({ isOpen, onToggle }: SecurityProps) {
+  const { t } = useI18n();
+
   return (
     <ExpandableSection
       id="security"
       icon={Lock}
-      title="7. Security Measures & Encryption"
+      title={t("privacyPolicy.sections.security.title")}
       isOpen={isOpen}
       onToggle={onToggle}
     >
       <div className="space-y-4">
         <p>
-          We implement industry-standard security measures to protect your data:
+          {t("privacyPolicy.sections.security.intro")}
         </p>
 
         <div className="grid md:grid-cols-2 gap-4">
           <div className="bg-accent/50 rounded-lg p-4">
             <h4 className="font-medium text-foreground mb-2 flex items-center gap-2">
               <Lock className="w-4 h-4 text-primary" aria-hidden="true" />
-              Local Encryption
+              {t("privacyPolicy.sections.security.localEncryption.title")}
             </h4>
             <p className="text-sm">
-              All data stored on your device is encrypted using AES-256 encryption.
-              iOS uses Data Protection, Android uses AES encryption.
+              {t("privacyPolicy.sections.security.localEncryption.content")}
             </p>
           </div>
           <div className="bg-accent/50 rounded-lg p-4">
             <h4 className="font-medium text-foreground mb-2 flex items-center gap-2">
               <Fingerprint className="w-4 h-4 text-primary" aria-hidden="true" />
-              Biometric Authentication
+              {t("privacyPolicy.sections.security.biometric.title")}
             </h4>
             <p className="text-sm">
-              Optional Face ID, Touch ID, or fingerprint authentication to access the app.
+              {t("privacyPolicy.sections.security.biometric.content")}
             </p>
           </div>
           <div className="bg-accent/50 rounded-lg p-4">
             <h4 className="font-medium text-foreground mb-2 flex items-center gap-2">
               <Key className="w-4 h-4 text-primary" aria-hidden="true" />
-              Secure Backups
+              {t("privacyPolicy.sections.security.secureBackups.title")}
             </h4>
             <p className="text-sm">
-              Optional cloud backups are encrypted before upload using industry-standard protocols.
+              {t("privacyPolicy.sections.security.secureBackups.content")}
             </p>
           </div>
           <div className="bg-accent/50 rounded-lg p-4">
             <h4 className="font-medium text-foreground mb-2 flex items-center gap-2">
               <Shield className="w-4 h-4 text-primary" aria-hidden="true" />
-              No Server Storage
+              {t("privacyPolicy.sections.security.noServerStorage.title")}
             </h4>
             <p className="text-sm">
-              By default, no data is stored on our servers, minimizing exposure to data breaches.
+              {t("privacyPolicy.sections.security.noServerStorage.content")}
             </p>
           </div>
         </div>
 
         <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-4 mt-4">
-          <h4 className="font-medium text-red-800 dark:text-red-200 mb-2">Security Limitations</h4>
+          <h4 className="font-medium text-red-800 dark:text-red-200 mb-2">{t("privacyPolicy.sections.security.limitations.title")}</h4>
           <p className="text-sm text-red-800 dark:text-red-200">
-            While we take extensive measures to protect your data, no method of electronic storage
-            is 100% secure. We recommend enabling device-level security (PIN, password, biometric)
-            and keeping your device&apos;s operating system updated.
+            {t("privacyPolicy.sections.security.limitations.content")}
           </p>
         </div>
       </div>

@@ -620,6 +620,89 @@
       "contact": "Contactez-Nous"
     }
   },
+  "termsOfService": {
+    "metadata": {
+      "title": "Conditions d'Utilisation - SmartSpend",
+      "description": "Consultez les conditions d'utilisation, les accords d'utilisateur et la politique d'utilisation acceptable de SmartSpend. Comprenez vos droits et responsabilités lors de l'utilisation de notre application de gestion financière personnelle."
+    },
+    "header": {
+      "badge": "Document Légal",
+      "title": "Conditions d'Utilisation",
+      "subtitle": "Veuillez lire attentivement ces conditions avant d'utiliser SmartSpend. En utilisant notre application, vous acceptez d'être lié par ces conditions.",
+      "lastUpdated": "Dernière mise à jour",
+      "effectiveDate": "Date d'entrée en vigueur"
+    },
+    "sections": {
+      "introduction": {
+        "title": "Introduction",
+        "content": "Bienvenue sur SmartSpend. En utilisant notre application, vous acceptez ces conditions d'utilisation. SmartSpend est une application de gestion financière personnelle conçue pour vous aider à suivre vos dépenses, revenus et budgets."
+      },
+      "service": {
+        "title": "Description du Service",
+        "intro": "SmartSpend offre :",
+        "features": {
+          "tracking": "Suivi des transactions (revenus et dépenses)",
+          "management": "Gestion des catégories et budgets",
+          "visualization": "Visualisation des statistiques financières",
+          "sync": "Synchronisation cloud optionnelle",
+          "guest": "Mode invité avec stockage local",
+          "backup": "Sauvegarde et exportation des données"
+        }
+      },
+      "accounts": {
+        "title": "Comptes Utilisateur",
+        "intro": "Vous pouvez utiliser SmartSpend en deux modes :",
+        "guest": {
+          "title": "Mode Invité :",
+          "description": "Vos données sont stockées localement sur votre appareil. Aucun compte n'est requis."
+        },
+        "cloud": {
+          "title": "Mode Cloud :",
+          "description": "En créant un compte, vos données sont synchronisées avec nos serveurs via Supabase. Vous êtes responsable de la confidentialité de votre compte."
+        }
+      },
+      "subscriptions": {
+        "title": "Abonnements et Paiements",
+        "content": "SmartSpend propose un abonnement Pro optionnel qui débloque des fonctionnalités premium. Les paiements sont traités en toute sécurité via RevenueCat et les magasins d'applications (App Store, Google Play). Les abonnements se renouvellent automatiquement sauf si vous les annulez avant la date de renouvellement. Vous pouvez gérer votre abonnement depuis les paramètres de votre compte dans le magasin d'applications correspondant."
+      },
+      "ownership": {
+        "title": "Propriété des Données",
+        "content": "Toutes vos données financières vous appartiennent. SmartSpend ne partage, ne vend ni n'utilise vos données à des fins publicitaires. Vous pouvez exporter ou supprimer vos données à tout moment depuis les paramètres de l'application."
+      },
+      "acceptableUse": {
+        "title": "Utilisation Acceptable",
+        "intro": "En utilisant SmartSpend, vous acceptez de :",
+        "rules": {
+          "legal": "Utiliser l'application uniquement à des fins légales et personnelles",
+          "noAccess": "Ne pas tenter d'accéder aux données d'autres utilisateurs",
+          "noModify": "Ne pas modifier, copier ou distribuer l'application sans autorisation",
+          "noDamage": "Ne pas utiliser l'application d'une manière qui pourrait endommager ou interrompre le service"
+        }
+      },
+      "limitations": {
+        "title": "Limitation de Responsabilité",
+        "content": "SmartSpend est fourni \"tel quel\" sans garantie d'aucune sorte. Nous ne sommes pas responsables des pertes financières, dommages ou inexactitudes dans les données. Il est de votre responsabilité de vérifier l'exactitude de vos dossiers financiers et d'effectuer des sauvegardes régulières de vos données."
+      },
+      "availability": {
+        "title": "Disponibilité du Service",
+        "content": "Nous faisons de notre mieux pour maintenir SmartSpend disponible, mais nous ne garantissons pas un temps de disponibilité de 100%. Nous pouvons suspendre ou interrompre le service à tout moment avec préavis."
+      },
+      "changes": {
+        "title": "Modifications des Conditions",
+        "content": "Nous nous réservons le droit de modifier ces conditions à tout moment. Les modifications seront publiées sur cette page avec une date de mise à jour. Votre utilisation continue de SmartSpend après les modifications constitue votre acceptation des nouvelles conditions."
+      },
+      "contact": {
+        "title": "Contact",
+        "intro": "Si vous avez des questions sur ces conditions, vous pouvez nous contacter à :",
+        "email": "support@jotatech.org"
+      }
+    },
+    "cta": {
+      "title": "Des Questions ?",
+      "description": "Si vous avez des questions sur ces Conditions d'Utilisation, n'hésitez pas à nous contacter.",
+      "button": "Contacter le Support"
+    }
+  },
   "error": {
     "title": "Quelque chose s'est mal passé",
     "message": "Une erreur inattendue s'est produite. Veuillez réessayer.",

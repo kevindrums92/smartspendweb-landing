@@ -2,6 +2,7 @@
 
 import { Globe } from "lucide-react";
 import { ExpandableSection } from "../ExpandableSection";
+import { useI18n } from "@/i18n/i18n-context";
 
 interface InternationalProps {
   isOpen: boolean;
@@ -9,56 +10,50 @@ interface InternationalProps {
 }
 
 export function International({ isOpen, onToggle }: InternationalProps) {
+  const { t } = useI18n();
+
   return (
     <ExpandableSection
       id="international"
       icon={Globe}
-      title="8. International Data Transfers & Compliance"
+      title={t("privacyPolicy.sections.international.title")}
       isOpen={isOpen}
       onToggle={onToggle}
     >
       <div className="space-y-4">
         <p>
-          SmartSpend is designed to keep your data local to your device. However, certain optional
-          features may involve international data transfers:
+          {t("privacyPolicy.sections.international.intro")}
         </p>
 
         <div className="space-y-4">
           <div className="bg-accent/50 rounded-lg p-4">
-            <h4 className="font-medium text-foreground mb-2">GDPR (European Union)</h4>
+            <h4 className="font-medium text-foreground mb-2">{t("privacyPolicy.sections.international.gdpr.title")}</h4>
             <p className="text-sm">
-              For EU users, we comply with the General Data Protection Regulation.
-              If you opt-in to analytics, data may be transferred to the US under
-              Standard Contractual Clauses (SCCs). You can withdraw consent at any time.
+              {t("privacyPolicy.sections.international.gdpr.content")}
             </p>
           </div>
           <div className="bg-accent/50 rounded-lg p-4">
-            <h4 className="font-medium text-foreground mb-2">CCPA (California, USA)</h4>
+            <h4 className="font-medium text-foreground mb-2">{t("privacyPolicy.sections.international.ccpa.title")}</h4>
             <p className="text-sm">
-              California residents have the right to know what personal information is collected,
-              the right to deletion, and the right to opt-out of the sale of personal information.
-              We do not sell personal information.
+              {t("privacyPolicy.sections.international.ccpa.content")}
             </p>
           </div>
           <div className="bg-accent/50 rounded-lg p-4">
-            <h4 className="font-medium text-foreground mb-2">LGPD (Brazil)</h4>
+            <h4 className="font-medium text-foreground mb-2">{t("privacyPolicy.sections.international.lgpd.title")}</h4>
             <p className="text-sm">
-              We comply with the Lei Geral de Proteção de Dados. Brazilian users have
-              rights to confirmation of processing, access, correction, and deletion of personal data.
+              {t("privacyPolicy.sections.international.lgpd.content")}
             </p>
           </div>
           <div className="bg-accent/50 rounded-lg p-4">
-            <h4 className="font-medium text-foreground mb-2">Other Jurisdictions</h4>
+            <h4 className="font-medium text-foreground mb-2">{t("privacyPolicy.sections.international.other.title")}</h4>
             <p className="text-sm">
-              We strive to comply with privacy laws in all jurisdictions where our app is available,
-              including PIPEDA (Canada), POPIA (South Africa), and others.
+              {t("privacyPolicy.sections.international.other.content")}
             </p>
           </div>
         </div>
 
         <p className="text-sm">
-          If you have questions about how we comply with specific privacy regulations in your region,
-          please contact us using the information provided below.
+          {t("privacyPolicy.sections.international.contact")}
         </p>
       </div>
     </ExpandableSection>

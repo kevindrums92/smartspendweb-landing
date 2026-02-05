@@ -620,6 +620,89 @@
       "contact": "Contact Us"
     }
   },
+  "termsOfService": {
+    "metadata": {
+      "title": "Terms of Service - SmartSpend",
+      "description": "Review SmartSpend's terms of service, user agreements, and acceptable use policy. Understand your rights and responsibilities when using our personal finance management app."
+    },
+    "header": {
+      "badge": "Legal Document",
+      "title": "Terms of Service",
+      "subtitle": "Please read these terms carefully before using SmartSpend. By using our application, you agree to be bound by these terms.",
+      "lastUpdated": "Last Updated",
+      "effectiveDate": "Effective Date"
+    },
+    "sections": {
+      "introduction": {
+        "title": "Introduction",
+        "content": "Welcome to SmartSpend. By using our application, you accept these terms of service. SmartSpend is a personal finance management application designed to help you track your expenses, income, and budgets."
+      },
+      "service": {
+        "title": "Service Description",
+        "intro": "SmartSpend offers:",
+        "features": {
+          "tracking": "Transaction tracking (income and expenses)",
+          "management": "Category and budget management",
+          "visualization": "Financial statistics visualization",
+          "sync": "Optional cloud synchronization",
+          "guest": "Guest mode with local storage",
+          "backup": "Data backup and export"
+        }
+      },
+      "accounts": {
+        "title": "User Accounts",
+        "intro": "You can use SmartSpend in two modes:",
+        "guest": {
+          "title": "Guest Mode:",
+          "description": "Your data is stored locally on your device. No account is required."
+        },
+        "cloud": {
+          "title": "Cloud Mode:",
+          "description": "By creating an account, your data is synchronized with our servers using Supabase. You are responsible for maintaining the confidentiality of your account."
+        }
+      },
+      "subscriptions": {
+        "title": "Subscriptions and Payments",
+        "content": "SmartSpend offers an optional Pro subscription that unlocks premium features. Payments are processed securely through RevenueCat and the app stores (App Store, Google Play). Subscriptions renew automatically unless you cancel them before the renewal date. You can manage your subscription from your account settings in the corresponding app store."
+      },
+      "ownership": {
+        "title": "Data Ownership",
+        "content": "All your financial data is your property. SmartSpend does not share, sell, or use your data for advertising. You can export or delete your data at any time from the app settings."
+      },
+      "acceptableUse": {
+        "title": "Acceptable Use",
+        "intro": "By using SmartSpend, you agree to:",
+        "rules": {
+          "legal": "Use the application only for legal and personal purposes",
+          "noAccess": "Not attempt to access data from other users",
+          "noModify": "Not modify, copy, or distribute the application without authorization",
+          "noDamage": "Not use the application in a way that could damage or interrupt the service"
+        }
+      },
+      "limitations": {
+        "title": "Limitation of Liability",
+        "content": "SmartSpend is provided \"as is\" without warranties of any kind. We are not responsible for financial losses, damages, or inaccuracies in the data. It is your responsibility to verify the accuracy of your financial records and perform regular backups of your data."
+      },
+      "availability": {
+        "title": "Service Availability",
+        "content": "We make our best effort to keep SmartSpend available, but we do not guarantee 100% uptime. We may suspend or discontinue the service at any time with prior notice."
+      },
+      "changes": {
+        "title": "Changes to Terms",
+        "content": "We reserve the right to modify these terms at any time. Changes will be posted on this page with an updated date. Your continued use of SmartSpend after the changes constitutes your acceptance of the new terms."
+      },
+      "contact": {
+        "title": "Contact",
+        "intro": "If you have questions about these terms, you can contact us at:",
+        "email": "support@jotatech.org"
+      }
+    },
+    "cta": {
+      "title": "Have Questions?",
+      "description": "If you have any questions about these Terms of Service, please don't hesitate to contact us.",
+      "button": "Contact Support"
+    }
+  },
   "error": {
     "title": "Something went wrong",
     "message": "An unexpected error occurred. Please try again.",

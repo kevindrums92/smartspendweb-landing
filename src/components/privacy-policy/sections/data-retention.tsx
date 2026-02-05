@@ -2,6 +2,7 @@
 
 import { Calendar, Database, BarChart3, Mail } from "lucide-react";
 import { ExpandableSection } from "../ExpandableSection";
+import { useI18n } from "@/i18n/i18n-context";
 
 interface DataRetentionProps {
   isOpen: boolean;
@@ -9,43 +10,44 @@ interface DataRetentionProps {
 }
 
 export function DataRetention({ isOpen, onToggle }: DataRetentionProps) {
+  const { t } = useI18n();
+
   return (
     <ExpandableSection
       id="retention"
       icon={Calendar}
-      title="6. Data Retention & Deletion Policies"
+      title={t("privacyPolicy.sections.retention.title")}
       isOpen={isOpen}
       onToggle={onToggle}
     >
       <div className="space-y-4">
         <div>
-          <h4 className="font-medium text-foreground mb-3">Retention Periods</h4>
+          <h4 className="font-medium text-foreground mb-3">{t("privacyPolicy.sections.retention.retentionPeriods.title")}</h4>
           <div className="space-y-3">
             <div className="flex items-start gap-3 bg-accent/50 rounded-lg p-4">
               <Database className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" aria-hidden="true" />
               <div>
-                <p className="font-medium text-foreground">Financial Data</p>
+                <p className="font-medium text-foreground">{t("privacyPolicy.sections.retention.retentionPeriods.financialData.title")}</p>
                 <p className="text-sm">
-                  Stored locally on your device until you delete it or uninstall the app.
-                  We do not retain copies on our servers.
+                  {t("privacyPolicy.sections.retention.retentionPeriods.financialData.content")}
                 </p>
               </div>
             </div>
             <div className="flex items-start gap-3 bg-accent/50 rounded-lg p-4">
               <BarChart3 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" aria-hidden="true" />
               <div>
-                <p className="font-medium text-foreground">Analytics Data</p>
+                <p className="font-medium text-foreground">{t("privacyPolicy.sections.retention.retentionPeriods.analyticsData.title")}</p>
                 <p className="text-sm">
-                  Anonymized analytics data is retained for up to 26 months to help us improve the app.
+                  {t("privacyPolicy.sections.retention.retentionPeriods.analyticsData.content")}
                 </p>
               </div>
             </div>
             <div className="flex items-start gap-3 bg-accent/50 rounded-lg p-4">
               <Mail className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" aria-hidden="true" />
               <div>
-                <p className="font-medium text-foreground">Support Communications</p>
+                <p className="font-medium text-foreground">{t("privacyPolicy.sections.retention.retentionPeriods.supportData.title")}</p>
                 <p className="text-sm">
-                  Retained for 2 years to help us provide better support and resolve disputes.
+                  {t("privacyPolicy.sections.retention.retentionPeriods.supportData.content")}
                 </p>
               </div>
             </div>
@@ -53,16 +55,16 @@ export function DataRetention({ isOpen, onToggle }: DataRetentionProps) {
         </div>
 
         <div>
-          <h4 className="font-medium text-foreground mb-3">Data Deletion</h4>
-          <p>You can delete your data in the following ways:</p>
+          <h4 className="font-medium text-foreground mb-3">{t("privacyPolicy.sections.retention.deletion.title")}</h4>
+          <p>{t("privacyPolicy.sections.retention.deletion.intro")}</p>
           <ul className="list-disc list-inside space-y-2 ml-4 mt-2">
-            <li><strong>Individual Items:</strong> Delete specific transactions or budgets in the app</li>
-            <li><strong>All App Data:</strong> Settings → Data → Delete All Data</li>
-            <li><strong>Complete Removal:</strong> Uninstall the app from your device</li>
-            <li><strong>Cloud Backups:</strong> Delete backups from your iCloud or Google Drive account</li>
+            <li dangerouslySetInnerHTML={{ __html: t("privacyPolicy.sections.retention.deletion.items.0") }} />
+            <li dangerouslySetInnerHTML={{ __html: t("privacyPolicy.sections.retention.deletion.items.1") }} />
+            <li dangerouslySetInnerHTML={{ __html: t("privacyPolicy.sections.retention.deletion.items.2") }} />
+            <li dangerouslySetInnerHTML={{ __html: t("privacyPolicy.sections.retention.deletion.items.3") }} />
           </ul>
           <p className="mt-3 text-sm italic">
-            Note: Once data is deleted from your device, we cannot recover it as we do not maintain server copies.
+            {t("privacyPolicy.sections.retention.deletion.note")}
           </p>
         </div>
       </div>

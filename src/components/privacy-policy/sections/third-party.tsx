@@ -2,6 +2,7 @@
 
 import { Cloud, BarChart3, CreditCard, Smartphone, ExternalLink } from "lucide-react";
 import { ExpandableSection } from "../ExpandableSection";
+import { useI18n } from "@/i18n/i18n-context";
 
 interface ThirdPartyProps {
   isOpen: boolean;
@@ -9,29 +10,30 @@ interface ThirdPartyProps {
 }
 
 export function ThirdParty({ isOpen, onToggle }: ThirdPartyProps) {
+  const { t } = useI18n();
+
   return (
     <ExpandableSection
       id="third-parties"
       icon={Cloud}
-      title="4. Third-Party Services & Integrations"
+      title={t("privacyPolicy.sections.thirdParties.title")}
       isOpen={isOpen}
       onToggle={onToggle}
     >
       <div className="space-y-6">
         <p>
-          SmartSpend is designed to work offline with minimal third-party dependencies.
-          However, certain optional features may involve third-party services:
+          {t("privacyPolicy.sections.thirdParties.intro")}
         </p>
 
         <div>
           <h4 className="font-medium text-foreground mb-3 flex items-center gap-2">
             <BarChart3 className="w-4 h-4 text-primary" aria-hidden="true" />
-            Analytics Providers (Optional)
+            {t("privacyPolicy.sections.thirdParties.analytics.title")}
           </h4>
           <div className="bg-accent/50 rounded-lg p-4">
-            <p className="font-medium">Firebase Analytics / Crashlytics (Google)</p>
+            <p className="font-medium">{t("privacyPolicy.sections.thirdParties.analytics.provider")}</p>
             <p className="text-sm mt-1">
-              Used only if you opt-in to analytics. Collects anonymized usage data and crash reports.
+              {t("privacyPolicy.sections.thirdParties.analytics.description")}
             </p>
             <a
               href="https://policies.google.com/privacy"
@@ -39,7 +41,7 @@ export function ThirdParty({ isOpen, onToggle }: ThirdPartyProps) {
               rel="noopener noreferrer"
               className="text-sm text-primary hover:underline inline-flex items-center gap-1 mt-2"
             >
-              View Google Privacy Policy <ExternalLink className="w-3 h-3" aria-hidden="true" />
+              {t("privacyPolicy.sections.thirdParties.analytics.link")} <ExternalLink className="w-3 h-3" aria-hidden="true" />
             </a>
           </div>
         </div>
@@ -47,44 +49,42 @@ export function ThirdParty({ isOpen, onToggle }: ThirdPartyProps) {
         <div>
           <h4 className="font-medium text-foreground mb-3 flex items-center gap-2">
             <CreditCard className="w-4 h-4 text-primary" aria-hidden="true" />
-            Payment Processors
+            {t("privacyPolicy.sections.thirdParties.payments.title")}
           </h4>
           <p className="text-sm">
-            SmartSpend does not process payments directly. If you make in-app purchases,
-            transactions are handled entirely by Apple App Store or Google Play Store.
-            We do not receive or store your payment information.
+            {t("privacyPolicy.sections.thirdParties.payments.content")}
           </p>
         </div>
 
         <div>
           <h4 className="font-medium text-foreground mb-3 flex items-center gap-2">
             <Cloud className="w-4 h-4 text-primary" aria-hidden="true" />
-            Cloud Backup Services (Optional)
+            {t("privacyPolicy.sections.thirdParties.cloudBackup.title")}
           </h4>
           <p className="text-sm">
-            If you enable optional cloud backup, your encrypted data may be stored using:
+            {t("privacyPolicy.sections.thirdParties.cloudBackup.content")}
           </p>
           <ul className="list-disc list-inside space-y-2 ml-4 mt-2 text-sm">
-            <li><strong>iCloud:</strong> Apple&apos;s cloud storage service (for iOS users)</li>
-            <li><strong>Google Drive:</strong> Google&apos;s cloud storage service (for Android users)</li>
+            <li dangerouslySetInnerHTML={{ __html: t("privacyPolicy.sections.thirdParties.cloudBackup.items.0") }} />
+            <li dangerouslySetInnerHTML={{ __html: t("privacyPolicy.sections.thirdParties.cloudBackup.items.1") }} />
           </ul>
           <p className="text-sm mt-2 italic">
-            Your data is encrypted before being uploaded to these services.
+            {t("privacyPolicy.sections.thirdParties.cloudBackup.note")}
           </p>
         </div>
 
         <div>
           <h4 className="font-medium text-foreground mb-3 flex items-center gap-2">
             <Smartphone className="w-4 h-4 text-primary" aria-hidden="true" />
-            Device Platform Services
+            {t("privacyPolicy.sections.thirdParties.platformServices.title")}
           </h4>
           <p className="text-sm">
-            The app uses standard device services for:
+            {t("privacyPolicy.sections.thirdParties.platformServices.content")}
           </p>
           <ul className="list-disc list-inside space-y-2 ml-4 mt-2 text-sm">
-            <li>Biometric authentication (Face ID, Touch ID, Fingerprint)</li>
-            <li>Local notifications and reminders</li>
-            <li>File export/import functionality</li>
+            <li>{t("privacyPolicy.sections.thirdParties.platformServices.items.0")}</li>
+            <li>{t("privacyPolicy.sections.thirdParties.platformServices.items.1")}</li>
+            <li>{t("privacyPolicy.sections.thirdParties.platformServices.items.2")}</li>
           </ul>
         </div>
       </div>

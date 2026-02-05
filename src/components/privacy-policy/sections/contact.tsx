@@ -2,6 +2,7 @@
 
 import { Mail } from "lucide-react";
 import { ExpandableSection } from "../ExpandableSection";
+import { useI18n } from "@/i18n/i18n-context";
 
 interface ContactProps {
   isOpen: boolean;
@@ -10,51 +11,48 @@ interface ContactProps {
 }
 
 export function Contact({ isOpen, onToggle, locale }: ContactProps) {
+  const { t } = useI18n();
+
   return (
     <ExpandableSection
       id="contact"
       icon={Mail}
-      title="11. Contact Information"
+      title={t("privacyPolicy.sections.contact.title")}
       isOpen={isOpen}
       onToggle={onToggle}
     >
       <div className="space-y-4">
         <p>
-          If you have any questions, concerns, or requests regarding this Privacy Policy or
-          our data practices, please contact us:
+          {t("privacyPolicy.sections.contact.intro")}
         </p>
 
         <div className="bg-accent/50 rounded-lg p-6">
-          <h4 className="font-medium text-foreground mb-4">Privacy Inquiries</h4>
+          <h4 className="font-medium text-foreground mb-4">{t("privacyPolicy.sections.contact.privacyInquiries.title")}</h4>
           <div className="space-y-3">
             <p className="flex items-center gap-3">
               <Mail className="w-5 h-5 text-primary flex-shrink-0" aria-hidden="true" />
-              <a href="mailto:privacy@smartspend.app" className="text-primary hover:underline">
-                privacy@smartspend.app
+              <a href={`mailto:${t("privacyPolicy.sections.contact.privacyInquiries.email")}`} className="text-primary hover:underline">
+                {t("privacyPolicy.sections.contact.privacyInquiries.email")}
               </a>
             </p>
-            <p className="text-sm text-muted">
-              For general support inquiries, please visit our <a href={`/${locale}/contacto`} className="text-primary hover:underline">contact page</a>.
-            </p>
+            <p className="text-sm text-muted" dangerouslySetInnerHTML={{ __html: t("privacyPolicy.sections.contact.privacyInquiries.supportNote").replace('contact page', `<a href="/${locale}/contacto" class="text-primary hover:underline">contact page</a>`) }} />
           </div>
         </div>
 
         <div className="bg-accent/50 rounded-lg p-6">
-          <h4 className="font-medium text-foreground mb-4">Data Protection Officer</h4>
+          <h4 className="font-medium text-foreground mb-4">{t("privacyPolicy.sections.contact.dpo.title")}</h4>
           <p className="text-sm">
-            For GDPR-related inquiries or to exercise your EU data protection rights,
-            please contact our Data Protection Officer at:
+            {t("privacyPolicy.sections.contact.dpo.content")}
           </p>
           <p className="mt-2">
-            <a href="mailto:dpo@smartspend.app" className="text-primary hover:underline">
-              dpo@smartspend.app
+            <a href={`mailto:${t("privacyPolicy.sections.contact.dpo.email")}`} className="text-primary hover:underline">
+              {t("privacyPolicy.sections.contact.dpo.email")}
             </a>
           </p>
         </div>
 
         <p className="text-sm text-muted">
-          We aim to respond to all privacy-related inquiries within 30 days. For complex requests
-          or high volumes, this may take up to 90 days, in which case we will notify you of the delay.
+          {t("privacyPolicy.sections.contact.responseTime")}
         </p>
       </div>
     </ExpandableSection>

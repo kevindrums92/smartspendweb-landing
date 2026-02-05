@@ -2,6 +2,7 @@
 
 import { Database, Smartphone, MapPin, BarChart3 } from "lucide-react";
 import { ExpandableSection } from "../ExpandableSection";
+import { useI18n } from "@/i18n/i18n-context";
 
 interface DataCollectionProps {
   isOpen: boolean;
@@ -9,11 +10,13 @@ interface DataCollectionProps {
 }
 
 export function DataCollection({ isOpen, onToggle }: DataCollectionProps) {
+  const { t } = useI18n();
+
   return (
     <ExpandableSection
       id="data-collection"
       icon={Database}
-      title="2. Information We Collect"
+      title={t("privacyPolicy.sections.dataCollection.title")}
       isOpen={isOpen}
       onToggle={onToggle}
     >
@@ -21,73 +24,69 @@ export function DataCollection({ isOpen, onToggle }: DataCollectionProps) {
         <div>
           <h4 className="font-medium text-foreground mb-3 flex items-center gap-2">
             <Smartphone className="w-4 h-4 text-primary" aria-hidden="true" />
-            Personal Information (Optional)
+            {t("privacyPolicy.sections.dataCollection.personalInfo.title")}
           </h4>
           <ul className="list-disc list-inside space-y-2 ml-4">
-            <li>Name or nickname (if you choose to set one)</li>
-            <li>Profile preferences (currency, language, theme)</li>
-            <li>Biometric authentication preferences (Face ID, Fingerprint)</li>
+            <li>{t("privacyPolicy.sections.dataCollection.personalInfo.items.0")}</li>
+            <li>{t("privacyPolicy.sections.dataCollection.personalInfo.items.1")}</li>
+            <li>{t("privacyPolicy.sections.dataCollection.personalInfo.items.2")}</li>
           </ul>
           <p className="mt-2 text-sm italic">
-            Note: All personal information is stored locally on your device and never transmitted to our servers.
+            {t("privacyPolicy.sections.dataCollection.personalInfo.note")}
           </p>
         </div>
 
         <div>
           <h4 className="font-medium text-foreground mb-3 flex items-center gap-2">
             <Database className="w-4 h-4 text-primary" aria-hidden="true" />
-            Financial Data (Local Only)
+            {t("privacyPolicy.sections.dataCollection.financialData.title")}
           </h4>
           <ul className="list-disc list-inside space-y-2 ml-4">
-            <li>Transaction records (amounts, dates, categories, notes)</li>
-            <li>Budget configurations and spending limits</li>
-            <li>Scheduled/recurring transaction settings</li>
-            <li>Category customizations and icons</li>
+            <li>{t("privacyPolicy.sections.dataCollection.financialData.items.0")}</li>
+            <li>{t("privacyPolicy.sections.dataCollection.financialData.items.1")}</li>
+            <li>{t("privacyPolicy.sections.dataCollection.financialData.items.2")}</li>
+            <li>{t("privacyPolicy.sections.dataCollection.financialData.items.3")}</li>
           </ul>
           <p className="mt-2 text-sm italic">
-            Important: Your financial data never leaves your device unless you explicitly export it or enable optional cloud backup.
+            {t("privacyPolicy.sections.dataCollection.financialData.note")}
           </p>
         </div>
 
         <div>
           <h4 className="font-medium text-foreground mb-3 flex items-center gap-2">
             <Smartphone className="w-4 h-4 text-primary" aria-hidden="true" />
-            Device Information (Minimal)
+            {t("privacyPolicy.sections.dataCollection.deviceInfo.title")}
           </h4>
           <ul className="list-disc list-inside space-y-2 ml-4">
-            <li>Device type and operating system version (for compatibility)</li>
-            <li>App version and settings</li>
-            <li>Screen size/orientation preferences</li>
+            <li>{t("privacyPolicy.sections.dataCollection.deviceInfo.items.0")}</li>
+            <li>{t("privacyPolicy.sections.dataCollection.deviceInfo.items.1")}</li>
+            <li>{t("privacyPolicy.sections.dataCollection.deviceInfo.items.2")}</li>
           </ul>
         </div>
 
         <div>
           <h4 className="font-medium text-foreground mb-3 flex items-center gap-2">
             <MapPin className="w-4 h-4 text-primary" aria-hidden="true" />
-            Location Data
+            {t("privacyPolicy.sections.dataCollection.locationData.title")}
           </h4>
-          <p>
-            SmartSpend does <strong>not</strong> collect, store, or transmit your location data.
-            All location-related features (if any) are processed locally on your device.
-          </p>
+          <p dangerouslySetInnerHTML={{ __html: t("privacyPolicy.sections.dataCollection.locationData.content") }} />
         </div>
 
         <div>
           <h4 className="font-medium text-foreground mb-3 flex items-center gap-2">
             <BarChart3 className="w-4 h-4 text-primary" aria-hidden="true" />
-            Usage Analytics
+            {t("privacyPolicy.sections.dataCollection.analytics.title")}
           </h4>
           <p>
-            We collect minimal, anonymized usage statistics only if you explicitly opt-in.
-            This data helps us improve the app and includes:
+            {t("privacyPolicy.sections.dataCollection.analytics.content")}
           </p>
           <ul className="list-disc list-inside space-y-2 ml-4 mt-2">
-            <li>Feature usage frequency (anonymized)</li>
-            <li>Crash reports and error logs</li>
-            <li>App performance metrics</li>
+            <li>{t("privacyPolicy.sections.dataCollection.analytics.items.0")}</li>
+            <li>{t("privacyPolicy.sections.dataCollection.analytics.items.1")}</li>
+            <li>{t("privacyPolicy.sections.dataCollection.analytics.items.2")}</li>
           </ul>
           <p className="mt-2 text-sm italic">
-            You can disable analytics at any time in Settings → Privacy → Analytics.
+            {t("privacyPolicy.sections.dataCollection.analytics.note")}
           </p>
         </div>
       </div>
