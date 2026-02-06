@@ -14,7 +14,7 @@ export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme, resolvedTheme } = useTheme();
 
   useEffect(() => {
     setMounted(true);
@@ -79,13 +79,13 @@ export function Header() {
 
               {/* Theme Toggle */}
               <button
-                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
                 className="w-10 h-10 rounded-full bg-gray-100 dark:bg-[#1a1d26] flex items-center justify-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-200 dark:hover:bg-[#252836] transition-colors"
                 aria-label={t("header.menu.open") as string}
               >
                 {mounted ? (
                   <AnimatePresence mode="wait">
-                    {theme === "dark" ? (
+                    {resolvedTheme === "dark" ? (
                       <motion.div
                         key="sun"
                         initial={{ scale: 0, rotate: -90 }}
