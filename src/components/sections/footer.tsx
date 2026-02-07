@@ -12,6 +12,7 @@ export function Footer() {
 
   const footerLinks = {
     product: [
+      { name: t("footer.product.ai"), href: isHomePage ? "#ai-batch-entry" : `/${locale}#ai-batch-entry` },
       { name: t("footer.product.features"), href: isHomePage ? "#features" : `/${locale}#features` },
       { name: t("footer.product.download"), href: isHomePage ? "#download" : `/${locale}#download` },
       { name: t("footer.product.changelog"), href: "#" },

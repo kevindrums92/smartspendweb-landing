@@ -32,6 +32,7 @@ export function Header() {
   
   const navLinks = [
     { name: t("navigation.home") as string, href: `/${locale}` },
+    { name: t("navigation.ai") as string, href: isHomePage ? "#ai-batch-entry" : `/${locale}#ai-batch-entry` },
     { name: t("navigation.features") as string, href: isHomePage ? "#features" : `/${locale}#features` },
     { name: t("navigation.privacy") as string, href: isHomePage ? "#privacy" : `/${locale}#privacy` },
     { name: t("navigation.contact") as string, href: `/${locale}/contacto` },

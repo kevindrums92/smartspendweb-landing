@@ -12,7 +12,8 @@
     "contact": "Contato",
     "budget": "Orçamento",
     "stats": "Estatísticas",
-    "settings": "Configurações"
+    "settings": "Configurações",
+    "ai": "IA"
   },
   "header": {
     "download": "Download",
@@ -41,10 +42,27 @@
       "subscriptionDue": "Assinatura vencida"
     }
   },
+  "aiBatchEntry": {
+    "title": "Registre despesas com",
+    "titleHighlight": "Inteligência Artificial",
+    "subtitle": "Apenas digite, diga ou tire uma foto. A IA entende suas despesas e as transforma em registros automaticamente.",
+    "textInput": {
+      "title": "Texto Natural",
+      "description": "Escreva como você fala: \"Gastei 50 reais no almoço e 20 no táxi\". A IA entende valores, categorias e datas."
+    },
+    "voiceInput": {
+      "title": "Gravação de Voz",
+      "description": "Grave um áudio descrevendo suas despesas. A IA transcreve e extrai cada transação automaticamente."
+    },
+    "imageInput": {
+      "title": "Foto de Recibo",
+      "description": "Tire uma foto do seu recibo ou fatura. A IA lê os itens e os transforma em transações."
+    }
+  },
   "features": {
     "title": "Tudo o que você precisa para",
     "titleHighlight": "controlar suas finanças",
-    "subtitle": "Três pilares fundamentais para uma gestão financeira inteligente e sem complicações.",
+    "subtitle": "Ferramentas poderosas para orçar, analisar e automatizar sua vida financeira.",
     "budget": {
       "title": "Inteligência de Orçamentos",
       "description": "Planeje com limites de gasto e metas de economia reais."
@@ -105,6 +123,7 @@
       "legal": "Legal"
     },
     "product": {
+      "ai": "Registro com IA",
       "features": "Recursos",
       "download": "Download",
       "changelog": "Changelog",

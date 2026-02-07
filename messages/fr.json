@@ -12,7 +12,8 @@
     "contact": "Contact",
     "budget": "Budget",
     "stats": "Statistiques",
-    "settings": "Paramètres"
+    "settings": "Paramètres",
+    "ai": "IA"
   },
   "header": {
     "download": "Télécharger",
@@ -41,10 +42,27 @@
       "subscriptionDue": "Abonnement échu"
     }
   },
+  "aiBatchEntry": {
+    "title": "Enregistrez vos dépenses avec",
+    "titleHighlight": "l'Intelligence Artificielle",
+    "subtitle": "Écrivez-le, dites-le ou prenez une photo. L'IA comprend vos dépenses et les transforme automatiquement en enregistrements.",
+    "textInput": {
+      "title": "Texte Naturel",
+      "description": "Écrivez comme vous parlez : « J'ai dépensé 50€ au déjeuner et 20€ en taxi ». L'IA comprend les montants, catégories et dates."
+    },
+    "voiceInput": {
+      "title": "Enregistrement Vocal",
+      "description": "Enregistrez un audio décrivant vos dépenses. L'IA transcrit et extrait chaque transaction automatiquement."
+    },
+    "imageInput": {
+      "title": "Photo de Reçu",
+      "description": "Prenez une photo de votre reçu ou facture. L'IA lit les articles et les transforme en transactions."
+    }
+  },
   "features": {
     "title": "Tout ce dont vous avez besoin pour",
     "titleHighlight": "contrôler vos finances",
-    "subtitle": "Trois piliers fondamentaux pour une gestion financière intelligente et sans tracas.",
+    "subtitle": "Des outils puissants pour budgétiser, analyser et automatiser votre vie financière.",
     "budget": {
       "title": "Intelligence Budgétaire",
       "description": "Planifiez avec des limites de dépenses réelles et des objectifs d'épargne."
@@ -105,6 +123,7 @@
       "legal": "Légal"
     },
     "product": {
+      "ai": "Suivi par IA",
       "features": "Fonctionnalités",
       "download": "Télécharger",
       "changelog": "Changelog",

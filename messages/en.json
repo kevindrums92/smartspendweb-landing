@@ -12,7 +12,8 @@
     "contact": "Contact",
     "budget": "Budget",
     "stats": "Statistics",
-    "settings": "Settings"
+    "settings": "Settings",
+    "ai": "AI"
   },
   "header": {
     "download": "Download",
@@ -41,10 +42,27 @@
       "subscriptionDue": "Subscription due"
     }
   },
+  "aiBatchEntry": {
+    "title": "Track expenses with",
+    "titleHighlight": "Artificial Intelligence",
+    "subtitle": "Just type it, say it, or snap a photo. AI understands your expenses and turns them into records automatically.",
+    "textInput": {
+      "title": "Natural Text",
+      "description": "Type as you speak: \"Spent $50 on lunch and $20 on a taxi.\" AI understands amounts, categories, and dates."
+    },
+    "voiceInput": {
+      "title": "Voice Recording",
+      "description": "Record an audio describing your expenses. AI transcribes and extracts each transaction automatically."
+    },
+    "imageInput": {
+      "title": "Receipt Photo",
+      "description": "Take a photo of your receipt or invoice. AI reads the items and turns them into transactions."
+    }
+  },
   "features": {
     "title": "Everything you need to",
     "titleHighlight": "control your finances",
-    "subtitle": "Three fundamental pillars for intelligent and hassle-free financial management.",
+    "subtitle": "Powerful tools to budget, analyze, and automate your financial life.",
     "budget": {
       "title": "Budget Intelligence",
       "description": "Plan with real spending limits and savings goals."
@@ -105,6 +123,7 @@
       "legal": "Legal"
     },
     "product": {
+      "ai": "AI Tracking",
       "features": "Features",
       "download": "Download",
       "changelog": "Changelog",
