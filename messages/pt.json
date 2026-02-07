@@ -26,7 +26,7 @@
     "title": "Seu dinheiro, suas regras.",
     "titleHighlight": "Offline e 100% Privado.",
     "description": "A ferramenta definitiva de orçamento Local-First para iOS e Android. Controle seus gastos sem depender da nuvem.",
-    "downloadAppStore": "Baixar na App Store",
+    "testFlightBeta": "Testar no iOS (TestFlight)",
     "downloadPlayStore": "Baixar no Google Play",
     "stats": {
       "users": "Usuários ativos",

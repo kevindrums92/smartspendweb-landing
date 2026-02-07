@@ -8,6 +8,7 @@ import { HomeScreen } from "@/components/app-screens/home-screen";
 
 export function Hero() {
   const { t } = useI18n();
+  const testFlightUrl = process.env.NEXT_PUBLIC_TESTFLIGHT_URL || "#";
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-b from-gray-50 via-gray-50 to-white dark:from-[#0f1117] dark:via-[#0f1117] dark:to-[#1a1d26]">
@@ -46,15 +47,17 @@ export function Hero() {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <motion.a
-                href="#"
+                href={testFlightUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 className="flex items-center justify-center gap-3 px-6 py-4 rounded-2xl bg-white text-gray-900 font-semibold hover:bg-gray-100 transition-colors"
               >
                 <Apple className="w-6 h-6" />
                 <div className="text-left">
-                  <p className="text-xs text-gray-500">{t("hero.downloadAppStore")}</p>
-                  <p className="text-sm font-bold">App Store</p>
+                  <p className="text-xs text-gray-500">{t("hero.testFlightBeta")}</p>
+                  <p className="text-sm font-bold">TestFlight</p>
                 </div>
               </motion.a>
 

@@ -26,7 +26,7 @@
     "title": "Votre argent, vos règles.",
     "titleHighlight": "Hors ligne et 100% Privé.",
     "description": "L'outil de budget Local-First ultime pour iOS et Android. Contrôlez vos dépenses sans dépendre du cloud.",
-    "downloadAppStore": "Télécharger sur App Store",
+    "testFlightBeta": "Tester sur iOS (TestFlight)",
     "downloadPlayStore": "Télécharger sur Google Play",
     "stats": {
       "users": "Utilisateurs actifs",
