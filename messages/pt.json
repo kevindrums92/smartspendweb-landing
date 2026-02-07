@@ -57,6 +57,23 @@
     "imageInput": {
       "title": "Foto de Recibo",
       "description": "Tire uma foto do seu recibo ou fatura. A IA lê os itens e os transforma em transações."
+    },
+    "mockup": {
+      "header": "Adicionar várias",
+      "tabs": {
+        "text": "Texto",
+        "voice": "Voz",
+        "image": "Imagem"
+      },
+      "inputExample": "Gastei 50 reais no almoço e 20 no táxi",
+      "analyzeButton": "Analisar com IA",
+      "detected": "2 transações detectadas",
+      "lunch": "Almoço",
+      "restaurants": "Restaurantes",
+      "taxi": "Táxi",
+      "transport": "Transporte",
+      "totalExpenses": "Total despesas",
+      "saveButton": "Salvar 2 transações"
     }
   },
   "features": {

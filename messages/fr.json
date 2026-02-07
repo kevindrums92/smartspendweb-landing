@@ -57,6 +57,23 @@
     "imageInput": {
       "title": "Photo de Reçu",
       "description": "Prenez une photo de votre reçu ou facture. L'IA lit les articles et les transforme en transactions."
+    },
+    "mockup": {
+      "header": "Ajouter plusieurs",
+      "tabs": {
+        "text": "Texte",
+        "voice": "Voix",
+        "image": "Image"
+      },
+      "inputExample": "J'ai dépensé 50€ au déjeuner et 20€ en taxi",
+      "analyzeButton": "Analyser avec IA",
+      "detected": "2 transactions détectées",
+      "lunch": "Déjeuner",
+      "restaurants": "Restaurants",
+      "taxi": "Taxi",
+      "transport": "Transport",
+      "totalExpenses": "Total dépenses",
+      "saveButton": "Enregistrer 2 transactions"
     }
   },
   "features": {

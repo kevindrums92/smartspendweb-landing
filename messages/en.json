@@ -57,6 +57,23 @@
     "imageInput": {
       "title": "Receipt Photo",
       "description": "Take a photo of your receipt or invoice. AI reads the items and turns them into transactions."
+    },
+    "mockup": {
+      "header": "Add multiple",
+      "tabs": {
+        "text": "Text",
+        "voice": "Voice",
+        "image": "Image"
+      },
+      "inputExample": "Spent $50 on lunch and $20 on taxi",
+      "analyzeButton": "Analyze with AI",
+      "detected": "2 transactions detected",
+      "lunch": "Lunch",
+      "restaurants": "Restaurants",
+      "taxi": "Taxi",
+      "transport": "Transport",
+      "totalExpenses": "Total expenses",
+      "saveButton": "Save 2 transactions"
     }
   },
   "features": {
