@@ -113,14 +113,6 @@ export function Header() {
                 )}
               </button>
 
-              {/* CTA Button */}
-              <a
-                href={isHomePage ? "#download" : `/${locale}#download`}
-                className="hidden sm:flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#18B7B0] text-white font-medium hover:bg-[#149E98] transition-colors"
-              >
-                {t("header.download")}
-              </a>
-
               {/* Mobile Menu Button */}
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -156,12 +148,6 @@ export function Header() {
                     {link.name}
                   </a>
                 ))}
-                <a
-                  href={isHomePage ? "#download" : `/${locale}#download`}
-                  className="mt-2 px-4 py-3 rounded-xl bg-[#18B7B0] text-white font-medium text-center hover:bg-[#149E98] transition-colors"
-                >
-                  {t("header.download")} App
-                </a>
               </nav>
             </div>
           </motion.div>
