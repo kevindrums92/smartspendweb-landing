@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import { locales, defaultLocale, type Locale } from "./src/i18n/config";
-import { updateSession } from "./src/lib/supabase/middleware";
+import { locales, defaultLocale, type Locale } from "./i18n/config";
+import { updateSession } from "./lib/supabase/middleware";
 
 /**
  * Detect the preferred locale from the Accept-Language header
@@ -62,41 +62,53 @@ export async function middleware(request: NextRequest) {
   if (pathname.startsWith("/admin")) {
     // Allow login page without auth
     if (pathname === "/admin/login") {
-      const { user, supabaseResponse } = await updateSession(request);
-      if (user) {
-        const allowedEmails = getAdminAllowedEmails();
-        if (
-          user.email &&
-          allowedEmails.includes(user.email.toLowerCase())
-        ) {
-          const url = request.nextUrl.clone();
-          url.pathname = "/admin/users";
-          return NextResponse.redirect(url);
+      try {
+        const { user, supabaseResponse } = await updateSession(request);
+        if (user) {
+          const allowedEmails = getAdminAllowedEmails();
+          if (
+            user.email &&
+            allowedEmails.includes(user.email.toLowerCase())
+          ) {
+            const url = request.nextUrl.clone();
+            url.pathname = "/admin/users";
+            return NextResponse.redirect(url);
+          }
         }
+        return supabaseResponse;
+      } catch {
+        // If session check fails, just show login page
+        return NextResponse.next({ request });
       }
-      return supabaseResponse;
     }
 
     // All other /admin/* routes require auth + admin email
-    const { user, supabaseResponse } = await updateSession(request);
+    try {
+      const { user, supabaseResponse } = await updateSession(request);
 
-    if (!user) {
+      if (!user) {
+        const url = request.nextUrl.clone();
+        url.pathname = "/admin/login";
+        return NextResponse.redirect(url);
+      }
+
+      const allowedEmails = getAdminAllowedEmails();
+      if (
+        !user.email ||
+        !allowedEmails.includes(user.email.toLowerCase())
+      ) {
+        const url = request.nextUrl.clone();
+        url.pathname = "/admin/login";
+        return NextResponse.redirect(url);
+      }
+
+      return supabaseResponse;
+    } catch (error) {
+      console.error("[Middleware] Admin auth check failed:", error);
       const url = request.nextUrl.clone();
       url.pathname = "/admin/login";
       return NextResponse.redirect(url);
     }
-
-    const allowedEmails = getAdminAllowedEmails();
-    if (
-      !user.email ||
-      !allowedEmails.includes(user.email.toLowerCase())
-    ) {
-      const url = request.nextUrl.clone();
-      url.pathname = "/admin/login";
-      return NextResponse.redirect(url);
-    }
-
-    return supabaseResponse;
   }
 
   // ==============================
