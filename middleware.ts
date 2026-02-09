@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { locales, defaultLocale, type Locale } from "./src/i18n/config";
+import { updateSession } from "./src/lib/supabase/middleware";
 
 /**
  * Detect the preferred locale from the Accept-Language header
@@ -37,11 +38,70 @@ function getPreferredLocale(request: NextRequest): Locale {
   return defaultLocale;
 }
 
-export function middleware(request: NextRequest) {
+function getAdminAllowedEmails(): string[] {
+  return (process.env.ADMIN_ALLOWED_EMAILS || "")
+    .split(",")
+    .map((e) => e.trim().toLowerCase())
+    .filter(Boolean);
+}
+
+export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Only handle root path: redirect to locale-prefixed version
-  // Other paths without locale are handled by dedicated redirect pages
+  // ==============================
+  // ADMIN API ROUTES - session refresh only (no redirects)
+  // ==============================
+  if (pathname.startsWith("/api/admin")) {
+    const { supabaseResponse } = await updateSession(request);
+    return supabaseResponse;
+  }
+
+  // ==============================
+  // ADMIN ROUTE PROTECTION
+  // ==============================
+  if (pathname.startsWith("/admin")) {
+    // Allow login page without auth
+    if (pathname === "/admin/login") {
+      const { user, supabaseResponse } = await updateSession(request);
+      if (user) {
+        const allowedEmails = getAdminAllowedEmails();
+        if (
+          user.email &&
+          allowedEmails.includes(user.email.toLowerCase())
+        ) {
+          const url = request.nextUrl.clone();
+          url.pathname = "/admin/users";
+          return NextResponse.redirect(url);
+        }
+      }
+      return supabaseResponse;
+    }
+
+    // All other /admin/* routes require auth + admin email
+    const { user, supabaseResponse } = await updateSession(request);
+
+    if (!user) {
+      const url = request.nextUrl.clone();
+      url.pathname = "/admin/login";
+      return NextResponse.redirect(url);
+    }
+
+    const allowedEmails = getAdminAllowedEmails();
+    if (
+      !user.email ||
+      !allowedEmails.includes(user.email.toLowerCase())
+    ) {
+      const url = request.nextUrl.clone();
+      url.pathname = "/admin/login";
+      return NextResponse.redirect(url);
+    }
+
+    return supabaseResponse;
+  }
+
+  // ==============================
+  // LOCALE REDIRECT (existing)
+  // ==============================
   if (pathname === "/") {
     const preferredLocale = getPreferredLocale(request);
     const newUrl = new URL(`/${preferredLocale}`, request.url);
@@ -53,6 +113,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  // Only match root path
-  matcher: ["/"],
+  matcher: ["/", "/admin/:path*", "/api/admin/:path*"],
 };
