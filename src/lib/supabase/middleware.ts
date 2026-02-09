@@ -33,11 +33,16 @@ export async function updateSession(request: NextRequest) {
 
     // Treat auth errors (expired token, invalid session) as no user
     if (error) {
-      return { user: null, supabaseResponse };
+      return { user: null, supabaseResponse, aal: null };
     }
 
-    return { user, supabaseResponse };
+    // Get MFA authenticator assurance level (local operation, reads from JWT)
+    const {
+      data: aal,
+    } = await supabase.auth.mfa.getAuthenticatorAssuranceLevel();
+
+    return { user, supabaseResponse, aal };
   } catch {
-    return { user: null, supabaseResponse };
+    return { user: null, supabaseResponse, aal: null };
   }
 }

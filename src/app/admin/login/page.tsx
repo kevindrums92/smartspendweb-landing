@@ -40,6 +40,19 @@ export default function AdminLoginPage() {
         return;
       }
 
+      // Handle MFA flow
+      if (data.mfa === "enroll") {
+        router.push("/admin/mfa-enroll");
+        router.refresh();
+        return;
+      }
+
+      if (data.mfa === "verify") {
+        router.push("/admin/mfa-verify");
+        router.refresh();
+        return;
+      }
+
       router.push("/admin/users");
       router.refresh();
     } catch {

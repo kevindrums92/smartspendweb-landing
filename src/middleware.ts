@@ -1,6 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 import { locales, defaultLocale, type Locale } from "./i18n/config";
 import { updateSession } from "./lib/supabase/middleware";
+import {
+  validateTrustedDevice,
+  TRUSTED_DEVICE_COOKIE_NAME,
+} from "./lib/admin/trusted-device";
 
 /**
  * Detect the preferred locale from the Accept-Language header
@@ -60,31 +64,72 @@ export async function middleware(request: NextRequest) {
   // ADMIN ROUTE PROTECTION
   // ==============================
   if (pathname.startsWith("/admin")) {
-    // Allow login page without auth
+    // Allow login page without auth (redirect to admin if already fully authenticated)
     if (pathname === "/admin/login") {
       try {
-        const { user, supabaseResponse } = await updateSession(request);
+        const { user, aal, supabaseResponse } = await updateSession(request);
         if (user) {
           const allowedEmails = getAdminAllowedEmails();
           if (
             user.email &&
             allowedEmails.includes(user.email.toLowerCase())
           ) {
-            const url = request.nextUrl.clone();
-            url.pathname = "/admin/users";
-            return NextResponse.redirect(url);
+            // Check if MFA is fully resolved before redirecting to admin
+            const mfaVerified = aal?.currentLevel === "aal2";
+            const trustedCookie = request.cookies.get(TRUSTED_DEVICE_COOKIE_NAME);
+            const isTrusted = await validateTrustedDevice(
+              trustedCookie?.value,
+              user.id
+            );
+
+            if (mfaVerified || isTrusted) {
+              const url = request.nextUrl.clone();
+              url.pathname = "/admin/users";
+              return NextResponse.redirect(url);
+            }
           }
         }
         return supabaseResponse;
       } catch {
-        // If session check fails, just show login page
         return NextResponse.next({ request });
       }
     }
 
-    // All other /admin/* routes require auth + admin email
+    // MFA flow pages — require auth (aal1) but skip MFA enforcement
+    if (
+      pathname === "/admin/mfa-enroll" ||
+      pathname === "/admin/mfa-verify"
+    ) {
+      try {
+        const { user, supabaseResponse } = await updateSession(request);
+
+        if (!user) {
+          const url = request.nextUrl.clone();
+          url.pathname = "/admin/login";
+          return NextResponse.redirect(url);
+        }
+
+        const allowedEmails = getAdminAllowedEmails();
+        if (
+          !user.email ||
+          !allowedEmails.includes(user.email.toLowerCase())
+        ) {
+          const url = request.nextUrl.clone();
+          url.pathname = "/admin/login";
+          return NextResponse.redirect(url);
+        }
+
+        return supabaseResponse;
+      } catch {
+        const url = request.nextUrl.clone();
+        url.pathname = "/admin/login";
+        return NextResponse.redirect(url);
+      }
+    }
+
+    // All other /admin/* routes require auth + admin email + MFA
     try {
-      const { user, supabaseResponse } = await updateSession(request);
+      const { user, aal, supabaseResponse } = await updateSession(request);
 
       if (!user) {
         const url = request.nextUrl.clone();
@@ -100,6 +145,34 @@ export async function middleware(request: NextRequest) {
         const url = request.nextUrl.clone();
         url.pathname = "/admin/login";
         return NextResponse.redirect(url);
+      }
+
+      // MFA enforcement
+      if (aal) {
+        const needsMfa = aal.nextLevel === "aal2";
+        const mfaVerified = aal.currentLevel === "aal2";
+
+        if (needsMfa && !mfaVerified) {
+          // Check trusted device cookie
+          const trustedCookie = request.cookies.get(TRUSTED_DEVICE_COOKIE_NAME);
+          const isTrusted = await validateTrustedDevice(
+            trustedCookie?.value,
+            user.id
+          );
+
+          if (!isTrusted) {
+            const url = request.nextUrl.clone();
+            url.pathname = "/admin/mfa-verify";
+            return NextResponse.redirect(url);
+          }
+        }
+
+        // No MFA enrolled — force enrollment
+        if (aal.nextLevel === "aal1" && aal.currentLevel === "aal1") {
+          const url = request.nextUrl.clone();
+          url.pathname = "/admin/mfa-enroll";
+          return NextResponse.redirect(url);
+        }
       }
 
       return supabaseResponse;
