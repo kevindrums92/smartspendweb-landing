@@ -9,7 +9,7 @@ import { HomeScreen } from "@/components/app-screens/home-screen";
 export function Hero() {
   const { t } = useI18n();
   const testFlightUrl = process.env.NEXT_PUBLIC_TESTFLIGHT_URL || "#";
-  const playStoreUrl = process.env.NEXT_PUBLIC_PLAYSTORE_URL || "https://play.google.com/store/apps/details?id=com.jhotech.smartspend";
+  const androidApkUrl = "/app-release.apk"; // Direct APK download
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-b from-gray-50 via-gray-50 to-white dark:from-[#0f1117] dark:via-[#0f1117] dark:to-[#1a1d26]">
@@ -63,9 +63,8 @@ export function Hero() {
               </motion.a>
 
               <motion.a
-                href={playStoreUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={androidApkUrl}
+                download="SmartSpend.apk"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 className="flex items-center justify-center gap-3 px-6 py-4 rounded-2xl bg-gray-900 dark:bg-[#1a1d26] border border-gray-200 dark:border-[#2d313e] text-white font-semibold hover:bg-gray-800 dark:hover:bg-[#252836] transition-colors"
@@ -73,7 +72,7 @@ export function Hero() {
                 <Play className="w-6 h-6 fill-current" />
                 <div className="text-left">
                   <p className="text-xs text-gray-400">{t("hero.downloadPlayStore")}</p>
-                  <p className="text-sm font-bold">Google Play</p>
+                  <p className="text-sm font-bold">Android APK</p>
                 </div>
               </motion.a>
             </div>
