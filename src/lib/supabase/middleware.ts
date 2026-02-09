@@ -25,9 +25,19 @@ export async function updateSession(request: NextRequest) {
     }
   );
 
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  try {
+    const {
+      data: { user },
+      error,
+    } = await supabase.auth.getUser();
 
-  return { user, supabaseResponse };
+    // Treat auth errors (expired token, invalid session) as no user
+    if (error) {
+      return { user: null, supabaseResponse };
+    }
+
+    return { user, supabaseResponse };
+  } catch {
+    return { user: null, supabaseResponse };
+  }
 }

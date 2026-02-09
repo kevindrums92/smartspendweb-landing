@@ -13,13 +13,11 @@ export default function LoginLayout({
   return (
     <ThemeProvider
       attribute="class"
-      defaultTheme="system"
-      enableSystem
+      defaultTheme="dark"
+      enableSystem={false}
       disableTransitionOnChange={false}
     >
-      <div className="flex min-h-screen items-center justify-center bg-gray-50 dark:bg-[#0a0c10]">
-        {children}
-      </div>
+      {children}
     </ThemeProvider>
   );
 }
