@@ -138,6 +138,11 @@ export function Footer() {
           <p className="text-sm text-gray-500">
             {t("footer.madeWith")}
           </p>
+          {process.env.NEXT_PUBLIC_BUILD_ID && (
+            <p className="text-xs text-gray-400 dark:text-gray-600">
+              build {process.env.NEXT_PUBLIC_BUILD_ID}
+            </p>
+          )}
         </div>
       </div>
     </footer>
