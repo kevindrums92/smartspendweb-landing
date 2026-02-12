@@ -3,10 +3,19 @@
 import { TrendingUp, Github, Twitter, Instagram, Mail } from "lucide-react";
 import { useI18n } from "@/i18n/i18n-context";
 import { usePathname } from "next/navigation";
+import { useState, useEffect } from "react";
 
 export function Footer() {
   const { t, locale } = useI18n();
   const pathname = usePathname();
+  const [buildInfo, setBuildInfo] = useState<{ version: string; buildCode: number } | null>(null);
+
+  useEffect(() => {
+    fetch("/build-info.json")
+      .then((res) => res.json())
+      .then((data) => setBuildInfo(data))
+      .catch(() => {});
+  }, []);
   
   const isHomePage = pathname === `/${locale}` || pathname === "/";
 
@@ -138,9 +147,9 @@ export function Footer() {
           <p className="text-sm text-gray-500">
             {t("footer.madeWith")}
           </p>
-          {process.env.NEXT_PUBLIC_BUILD_ID && (
+          {buildInfo && (
             <p className="text-xs text-gray-400 dark:text-gray-600">
-              build {process.env.NEXT_PUBLIC_BUILD_ID}
+              v{buildInfo.version} (build {buildInfo.buildCode})
             </p>
           )}
         </div>

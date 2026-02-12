@@ -5,11 +5,20 @@ import { Apple, Play } from "lucide-react";
 import { useI18n } from "@/i18n/i18n-context";
 import { IPhoneMockup } from "@/components/iphone-mockup";
 import { HomeScreen } from "@/components/app-screens/home-screen";
+import { useState, useEffect } from "react";
 
 export function Hero() {
   const { t } = useI18n();
   const testFlightUrl = process.env.NEXT_PUBLIC_TESTFLIGHT_URL || "#";
   const androidApkUrl = "/app-release.apk"; // Direct APK download
+  const [buildInfo, setBuildInfo] = useState<{ version: string } | null>(null);
+
+  useEffect(() => {
+    fetch("/build-info.json")
+      .then((res) => res.json())
+      .then((data) => setBuildInfo(data))
+      .catch(() => {});
+  }, []);
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-b from-gray-50 via-gray-50 to-white dark:from-[#0f1117] dark:via-[#0f1117] dark:to-[#1a1d26]">
@@ -72,7 +81,7 @@ export function Hero() {
                 <Play className="w-6 h-6 fill-current" />
                 <div className="text-left">
                   <p className="text-xs text-gray-400">{t("hero.downloadPlayStore")}</p>
-                  <p className="text-sm font-bold">Android APK</p>
+                  <p className="text-sm font-bold">{buildInfo ? `Version ${buildInfo.version}` : "Android APK"}</p>
                 </div>
               </motion.a>
             </div>
