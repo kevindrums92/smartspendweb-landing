@@ -635,13 +635,13 @@
         "intro": "If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us:",
         "privacyInquiries": {
           "title": "Privacy Inquiries",
-          "email": "privacy@smartspend.app",
+          "email": "support@jotatech.org",
           "supportNote": "For general support inquiries, please visit our contact page."
         },
         "dpo": {
           "title": "Data Protection Officer",
           "content": "For GDPR-related inquiries or to exercise your EU data protection rights, please contact our Data Protection Officer at:",
-          "email": "dpo@smartspend.app"
+          "email": "support@jotatech.org"
         },
         "responseTime": "We aim to respond to all privacy-related inquiries within 30 days. For complex requests or high volumes, this may take up to 90 days, in which case we will notify you of the delay."
       }
@@ -678,6 +678,8 @@
         "intro": "SmartSpend offers:",
         "features": {
           "tracking": "Transaction tracking (income and expenses)",
+          "categories": "Category and budget management",
+          "statistics": "Financial statistics and reports",
           "management": "Category and budget management",
           "visualization": "Financial statistics visualization",
           "sync": "Optional cloud synchronization",
@@ -710,6 +712,9 @@
         "intro": "By using SmartSpend, you agree to:",
         "rules": {
           "legal": "Use the application only for legal and personal purposes",
+          "access": "Not attempt to access data from other users",
+          "modify": "Not modify, copy, or distribute the application without authorization",
+          "damage": "Not use the application in a way that could damage or interrupt the service",
           "noAccess": "Not attempt to access data from other users",
           "noModify": "Not modify, copy, or distribute the application without authorization",
           "noDamage": "Not use the application in a way that could damage or interrupt the service"

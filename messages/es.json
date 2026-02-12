@@ -635,13 +635,13 @@
         "intro": "Si tienes alguna pregunta, inquietud o solicitud respecto a esta Política de Privacidad o nuestras prácticas de datos, por favor contáctanos:",
         "privacyInquiries": {
           "title": "Consultas de Privacidad",
-          "email": "privacy@smartspend.app",
+          "email": "support@jotatech.org",
           "supportNote": "Para consultas generales de soporte, por favor visita nuestra página de contacto."
         },
         "dpo": {
           "title": "Oficial de Protección de Datos",
           "content": "Para consultas relacionadas con GDPR o para ejercer tus derechos de protección de datos de la UE, por favor contacta a nuestro Oficial de Protección de Datos en:",
-          "email": "dpo@smartspend.app"
+          "email": "support@jotatech.org"
         },
         "responseTime": "Nuestro objetivo es responder a todas las consultas relacionadas con privacidad dentro de 30 días. Para solicitudes complejas o volúmenes altos, esto puede tomar hasta 90 días, en cuyo caso te notificaremos sobre el retraso."
       }
@@ -678,6 +678,8 @@
         "intro": "SmartSpend ofrece:",
         "features": {
           "tracking": "Seguimiento de transacciones (ingresos y gastos)",
+          "categories": "Gestión de categorías y presupuestos",
+          "statistics": "Estadísticas e informes financieros",
           "management": "Gestión de categorías y presupuestos",
           "visualization": "Visualización de estadísticas financieras",
           "sync": "Sincronización opcional en la nube",
@@ -710,6 +712,9 @@
         "intro": "Al usar SmartSpend, aceptas:",
         "rules": {
           "legal": "Usar la aplicación solo para fines legales y personales",
+          "access": "No intentar acceder a datos de otros usuarios",
+          "modify": "No modificar, copiar o distribuir la aplicación sin autorización",
+          "damage": "No usar la aplicación de manera que pueda dañar o interrumpir el servicio",
           "noAccess": "No intentar acceder a datos de otros usuarios",
           "noModify": "No modificar, copiar o distribuir la aplicación sin autorización",
           "noDamage": "No usar la aplicación de manera que pueda dañar o interrumpir el servicio"
