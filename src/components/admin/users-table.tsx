@@ -11,6 +11,7 @@ import {
   Receipt,
   Clock,
   User,
+  RefreshCw,
 } from "lucide-react";
 import type { AdminUser, PaginatedResponse } from "@/lib/admin/types";
 import { STATUS_LABELS, PLAN_LABELS } from "@/lib/admin/types";
@@ -236,25 +237,42 @@ export function UsersTable() {
           />
         </div>
 
-        {/* Filter tabs */}
-        <div className="flex gap-1 rounded-xl bg-gray-100 dark:bg-[#2d313e] p-1">
-          {(Object.keys(FILTER_LABELS) as FilterType[]).map((key) => (
-            <button
-              key={key}
-              type="button"
-              onClick={() => {
-                setFilter(key);
-                setPage(1);
-              }}
-              className={`rounded-lg px-3 py-1.5 text-xs font-medium transition-colors ${
-                filter === key
-                  ? "bg-white dark:bg-[#1a1d26] text-gray-900 dark:text-white shadow-sm"
-                  : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
+        {/* Filter tabs + Refresh button */}
+        <div className="flex items-center gap-2">
+          <div className="flex gap-1 rounded-xl bg-gray-100 dark:bg-[#2d313e] p-1">
+            {(Object.keys(FILTER_LABELS) as FilterType[]).map((key) => (
+              <button
+                key={key}
+                type="button"
+                onClick={() => {
+                  setFilter(key);
+                  setPage(1);
+                }}
+                className={`rounded-lg px-3 py-1.5 text-xs font-medium transition-colors ${
+                  filter === key
+                    ? "bg-white dark:bg-[#1a1d26] text-gray-900 dark:text-white shadow-sm"
+                    : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
+                }`}
+              >
+                {FILTER_LABELS[key]}
+              </button>
+            ))}
+          </div>
+
+          {/* Refresh button */}
+          <button
+            type="button"
+            onClick={fetchUsers}
+            disabled={loading}
+            className="rounded-xl p-2 hover:bg-gray-100 dark:hover:bg-[#2d313e] transition-colors disabled:opacity-50"
+            title="Actualizar lista"
+          >
+            <RefreshCw
+              className={`h-4 w-4 text-gray-600 dark:text-gray-400 ${
+                loading ? "animate-spin" : ""
               }`}
-            >
-              {FILTER_LABELS[key]}
-            </button>
-          ))}
+            />
+          </button>
         </div>
       </div>
 
